@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     neo4j_database: str | None = None
 
     class Config:
-        env_file = "../.env"
+        env_file = ".env"
         env_prefix = ""
 
 
