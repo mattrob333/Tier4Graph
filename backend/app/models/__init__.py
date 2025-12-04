@@ -7,6 +7,7 @@ from .certification import CertificationBase
 from .client import ClientBase
 from .project import ProjectBase
 from .constraint import ConstraintBase
+from .matching import MatchingRequest, MatchVendor, MatchResponse
 
 __all__ = [
     "VendorBase",
@@ -18,4 +19,7 @@ __all__ = [
     "ClientBase",
     "ProjectBase",
     "ConstraintBase",
+    "MatchingRequest",
+    "MatchVendor",
+    "MatchResponse",
 ]
