@@ -1,0 +1,17 @@
+[project]
+name = "cpe-backend"
+version = "0.1.0"
+description = "Cognitive Procurement Engine backend (FastAPI + Neo4j)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "pydantic-settings",
+    "neo4j",
+    "httpx",
+    "loguru",
+]
+
+[tool.uvicorn]
+factory = false
