@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from .routers import health, admin, vendor
+from .routers import health, admin, vendor, ingestion
 from .db.neo4j import init_neo4j_driver, close_neo4j_driver
 
 app = FastAPI(
@@ -11,6 +11,7 @@ app = FastAPI(
 app.include_router(health.router)
 app.include_router(admin.router)
 app.include_router(vendor.router)
+app.include_router(ingestion.router)
 
 
 @app.on_event("startup")
