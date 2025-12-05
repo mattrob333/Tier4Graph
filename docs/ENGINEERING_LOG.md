@@ -2,7 +2,7 @@
 
 > **Branch:** `feature/matching-engine-v1`
 > **Last Updated:** 2025-12-05
-> **Status:** Phase 3-Lite Complete (Structured Matching Engine)
+> **Status:** Phase 3-Lite Complete + OpenAI Integration + Frontend Demo
 
 This document provides a chronological log of development progress, key decisions, difficulties encountered, and next steps for the CPE project. Written for onboarding new developers.
 
@@ -68,13 +68,66 @@ The Cognitive Procurement Engine (CPE) is an AI-native IT procurement decision p
 - Built data seeding infrastructure with 10 demo vendors
 - Created `seed_vendors.py` script and `vendors_seed.json` data file
 
-### Phase 3-Lite Enhancements (Current)
+### Phase 3-Lite Enhancements
 - Added `Vendor-[:HOLDS]->Certification` relationship support
 - Certification-based matching now functional (hard filter + scoring)
 - Added `region` field to Vendor model for proper geographic matching
 - Updated seed data with region values (us-east, us-west, us-central)
 - Added `ScoreBreakdown` model showing per-criterion scores
 - Matching response now includes `score_breakdown` with industry/region/cert scores
+
+### OpenAI NL Parser Integration (Current)
+- Implemented `OpenAINLParser` class using GPT-4o-mini model
+- Structured JSON output with schema validation
+- Automatic fallback to `MockNLParser` on API errors
+- Factory pattern via `get_nl_parser()` selects parser based on `settings.llm_provider`
+- Added `OPENAI_API_KEY` environment variable support
+- Production-quality natural language understanding now available
+
+### Frontend Match Demo Page
+- Created `/match-demo` page in Next.js frontend
+- Installed and configured Tailwind CSS (v4.1.17)
+- Full-featured demo UI with:
+  - Multi-line textarea for natural language queries
+  - Loading states and error handling
+  - Vendor result cards with score badges
+  - Score breakdown display (industry/region/certs/total)
+  - Matched reasons bullet lists
+  - Collapsible raw JSON debug section
+- CORS middleware added to backend for frontend access
+- TypeScript types matching backend Pydantic models
+
+### Advanced NL Parsing & Matching Refinements (2025-12-05)
+Major overhaul of the query parsing and matching pipeline to handle complex natural language queries accurately.
+
+**OpenAI Prompt Enhancements:**
+- Added `backup-dr` industry mapping for "backup & disaster-recovery" queries
+- Added `regions` field (separate from cities) for geographic region extraction (us-west, eu-central, etc.)
+- Added `result_limit` and `sort_by` fields for query control ("top 2", "lowest risk first")
+- Added service keyword mappings (immutable, disaster-recovery, wavelength, etc.)
+- Included exact examples matching real user query patterns
+
+**MatchingRequest Model Updates:**
+- Added `regions: list[str]` for multi-region facility matching
+- Added `result_limit: int | None` for controlling result count
+- Added `sort_by: str | None` for custom sort orders (risk_asc, score_desc, name_asc)
+
+**Matching Service Improvements:**
+- `_industry_matches()`: Fuzzy matching with alias support (backup-dr ↔ backup, disaster-recovery)
+- `_region_matches()`: Region-to-facility geo matching with variations
+- `_service_matches()`: Keyword-based service matching (immutable → WORM, write-once, air-gap)
+- Global vendors (region="global") now match any requested region with `*` indicator
+- Fixed sorting: Score DESC primary, then risk/name as secondary sort
+- Proper result limiting after scoring and sorting
+
+**Database Cleanup:**
+- Added DELETE /vendors/{vendor_id} endpoint
+- Removed mock/duplicate vendors (digitalrealty, healthcaredc, budgetcolo)
+- Fixed Service and Facility repositories to create proper relationships (OFFERS, HAS_FACILITY)
+
+**Test Results:**
+- Query: "backup & disaster-recovery vendor, immutable copies in US-West and EU-Central, ISO-27001, risk below 0.25, top 2"
+- Result: Veeam (score 6), Acronis (score 5) - both correct backup-dr vendors with ISO 27001
 
 ---
 
@@ -230,8 +283,10 @@ records = [record async for record in result]
 - [x] Region extraction (us-east, us-west, eu-west, apac)
 - [x] Industry extraction (colocation, healthcare, cloud, etc.)
 - [x] Service extraction (colocation, DR, managed-services, etc.)
-- [x] Risk tolerance extraction (conservative � aggressive)
-- [x] Factory pattern for future LLM parser integration
+- [x] Risk tolerance extraction (conservative → aggressive)
+- [x] Factory pattern for LLM parser integration
+- [x] OpenAINLParser with GPT-4o-mini (structured JSON output)
+- [x] Automatic fallback to MockNLParser on API errors
 
 ### Data Seeding
 - [x] `seed_vendors.py` seeding script
@@ -240,6 +295,16 @@ records = [record async for record in result]
 - [x] Healthcare-focused vendor (HealthcareDC)
 - [x] Budget option (BudgetColo)
 - [x] Region field populated for all vendors (us-east, us-west, us-central)
+
+### Frontend
+- [x] Next.js 14 App Router setup
+- [x] Tailwind CSS v4.1.17 configured
+- [x] `/match-demo` page with full matching UI
+- [x] TypeScript types for API response shapes
+- [x] Loading states and error handling
+- [x] Vendor result cards with scores and reasons
+- [x] Collapsible debug JSON viewer
+- [x] CORS enabled for localhost:3000
 
 ---
 
@@ -250,7 +315,7 @@ records = [record async for record in result]
 
 2. ~~**Region mismatch**~~ - **RESOLVED** - Added explicit `region` field to Vendor model.
 
-3. **Mock NL parser only** - No LLM-backed parsing implemented. Complex queries may parse incorrectly.
+3. ~~**Mock NL parser only**~~ - **RESOLVED** - OpenAINLParser implemented with GPT-4o-mini.
 
 4. **No service filtering** - `required_services` is extracted but not used in matching logic.
 
@@ -266,7 +331,7 @@ records = [record async for record in result]
 ### Low Priority
 9. **Limited test coverage** - No automated tests for matching logic.
 
-10. **No frontend** - All interaction via API/curl.
+10. ~~**No frontend**~~ - **RESOLVED** - Match demo page at `/match-demo` with full UI.
 
 11. **Hardcoded scoring weights** - All matches worth +1 point, no configurable weights.
 
@@ -280,20 +345,14 @@ records = [record async for record in result]
 - [x] Add Vendor-Certification relationships (HOLDS) - **Done**
 - [x] Fix region matching (add region field) - **Done**
 - [x] Add score breakdown to response - **Done**
+- [x] Implement OpenAI NL Parser (GPT-4o-mini) - **Done**
+- [x] Build frontend match demo page - **Done**
+- [x] Add CORS middleware for frontend access - **Done**
+- [x] Configure Tailwind CSS in frontend - **Done**
 
 ### Recommended Immediate Tasks (Priority Order)
 
-#### 1. Re-seed the Database
-**Goal:** Populate the new relationships and region data.
-
-**Tasks:**
-- Restart backend: `cd backend && uvicorn app.main:app --reload`
-- Run seeding script: `python -m scripts.seed_vendors`
-- Verify with test queries
-
-**Impact:** Required - Data won't match until re-seeded.
-
-#### 2. Add Service Filtering
+#### 1. Add Service Filtering
 **Goal:** Use `required_services` in matching logic.
 
 **Tasks:**
@@ -303,29 +362,17 @@ records = [record async for record in result]
 
 **Impact:** Medium - Completes the structured matching criteria.
 
-#### 3. Build Minimal Frontend Test Page
-**Goal:** Demo the `/match/nl` endpoint without curl.
+#### 2. Client/Project Modeling (Phase 2)
+**Goal:** Persist client requirements and project context.
 
 **Tasks:**
-- Create single-page Next.js form
-- Text input for NL query
-- Display results as cards with vendor name, score, score_breakdown, reasons
-- No auth required (internal tool)
+- Implement Client repository and API endpoints
+- Implement Project repository with Constraint relationships
+- Link projects to matching results for tracking
 
-**Impact:** Medium - Demo-ready for stakeholders.
+**Impact:** Medium-High - Enables full vCISO workflow.
 
-#### 4. Implement LLM-Backed NL Parser
-**Goal:** Handle complex, ambiguous queries.
-
-**Tasks:**
-- Implement `OpenAINLParser` or `AnthropicNLParser` classes
-- Update factory to check `settings.llm_provider`
-- Prompt engineering for structured output
-- Fallback to MockNLParser if no API key
-
-**Impact:** Medium-High - Production-quality NL understanding.
-
-#### 5. Add Automated Tests
+#### 3. Add Automated Tests
 **Goal:** Ensure matching logic correctness.
 
 **Tasks:**
@@ -334,6 +381,26 @@ records = [record async for record in result]
 - Integration tests for `/match/structured` and `/match/nl` endpoints
 
 **Impact:** Medium - Confidence in code changes.
+
+#### 4. Semantic Search / Vector Embeddings
+**Goal:** Handle fuzzy matching and semantic similarity.
+
+**Tasks:**
+- Add vector index to Neo4j for vendor descriptions
+- Implement embedding generation (OpenAI or local model)
+- Use `text_query` field for semantic search
+
+**Impact:** High - Production-quality fuzzy matching.
+
+#### 5. Deep Research Integration (Phase 4)
+**Goal:** Augment matching with real-time vendor research.
+
+**Tasks:**
+- Integrate Tavily API for web search
+- LangGraph orchestration for research workflow
+- Cache research results in graph
+
+**Impact:** High - Differentiated AI capability.
 
 ---
 
@@ -394,15 +461,52 @@ curl -X POST http://localhost:8000/match/structured \
 
 ## Files Changed in This Session
 
-**Modified:**
+**Backend - Modified:**
 - `backend/app/repositories/certification_repository.py` - Added `upsert_certification_for_vendor()` with HOLDS relationship
 - `backend/app/routers/ingestion.py` - Updated certification ingestion to use new method
 - `backend/app/services/matching_service.py` - Added cert filtering/scoring, region field, score breakdown
+- `backend/app/services/nl_parser_service.py` - Added `OpenAINLParser` class with GPT-4o-mini integration
 - `backend/app/models/matching.py` - Added `ScoreBreakdown` model
 - `backend/app/models/__init__.py` - Exported `ScoreBreakdown`
 - `backend/app/models/vendor.py` - Added `region` field
 - `backend/app/repositories/vendor_repository.py` - Persist/retrieve `region` field
+- `backend/app/main.py` - Added CORS middleware for frontend access
 - `backend/data/vendors_seed.json` - Added `region` to all 10 vendors
+
+**Frontend - New/Modified:**
+- `frontend/tailwind.config.ts` - Tailwind CSS configuration
+- `frontend/postcss.config.mjs` - PostCSS configuration
+- `frontend/app/globals.css` - Tailwind directives
+- `frontend/app/layout.tsx` - Updated to import globals.css
+- `frontend/app/match-demo/types.ts` - TypeScript interfaces for API types
+- `frontend/app/match-demo/page.tsx` - Match demo page component
+
+---
+
+## Running the Application
+
+### Backend
+```bash
+cd backend
+pip install -e .
+uvicorn app.main:app --reload
+# Runs on http://127.0.0.1:8000
+```
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+# Runs on http://localhost:3000
+# Match demo at http://localhost:3000/match-demo
+```
+
+### Seed Data (backend must be running)
+```bash
+cd backend
+python -m scripts.seed_vendors
+```
 
 ---
 

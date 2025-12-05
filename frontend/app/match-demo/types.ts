@@ -4,6 +4,8 @@ export interface ScoreBreakdown {
   industry: number;
   region: number;
   certifications: number;
+  services: number;
+  locations: number;
   total: number;
 }
 
@@ -13,6 +15,14 @@ export interface MatchVendor {
   score: number;
   score_breakdown: ScoreBreakdown | null;
   matched_reasons: string[];
+  // Rich vendor context
+  summary?: string;
+  region?: string;
+  risk_score?: number;
+  primary_segments?: string[];
+  certifications?: string[];
+  services?: string[];
+  facilities?: string[];
 }
 
 export interface MatchResponse {

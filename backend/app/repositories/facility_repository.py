@@ -14,10 +14,12 @@ class FacilityRepository:
     async def upsert_facility(self, facility: FacilityBase) -> None:
         """
         MERGE Facility node by facility_id and set all properties.
+        Also creates HAS_FACILITY relationship to the Vendor.
 
         Uses MERGE to respect unique constraint on facility_id.
         """
         cypher = """
+        MATCH (v:Vendor {vendor_id: $vendor_id})
         MERGE (f:Facility {facility_id: $facility_id})
         SET f.vendor_id = $vendor_id,
             f.geo = $geo,
@@ -25,6 +27,7 @@ class FacilityRepository:
             f.cooling = $cooling,
             f.power_density = $power_density,
             f.address = $address
+        MERGE (v)-[:HAS_FACILITY]->(f)
         """
         await self._session.run(
             cypher,

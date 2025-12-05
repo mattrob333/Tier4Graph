@@ -6,43 +6,137 @@ from neo4j import AsyncSession
 from app.models import MatchingRequest, MatchVendor, ScoreBreakdown
 
 
-def _cert_matches(required_cert: str, held_cert: str) -> bool:
-    """
-    Check if a held certification matches a required certification.
-
-    Uses case-insensitive substring matching:
-    - "SOC 2" matches "SOC 2 Type II"
-    - "hipaa" matches "HIPAA"
-    - "iso 27001" matches "ISO 27001"
-    """
-    return required_cert.lower() in held_cert.lower()
+def _substring_match(required: str, actual: str) -> bool:
+    """Case-insensitive substring matching with null safety."""
+    if not required or not actual:
+        return False
+    return required.lower() in actual.lower()
 
 
-def _count_cert_matches(required_certs: list[str], held_certs: list[str]) -> int:
-    """
-    Count how many required certs are matched by held certs.
+def _find_match(required: str, items: list[str]) -> str | None:
+    """Find first item that contains required string (case-insensitive)."""
+    if not required:
+        return None
+    for item in items:
+        if item and _substring_match(required, item):
+            return item
+    return None
 
-    Each required cert is matched if ANY held cert contains it (case-insensitive).
-    Returns count of matched required certs.
-    """
+
+def _count_matches(required_items: list[str], actual_items: list[str]) -> int:
+    """Count how many required items have a match in actual items."""
     count = 0
-    for req_cert in required_certs:
-        for held_cert in held_certs:
-            if _cert_matches(req_cert, held_cert):
-                count += 1
-                break  # Found a match for this required cert, move to next
+    for req in required_items:
+        if _find_match(req, actual_items):
+            count += 1
     return count
 
 
-def _find_matching_cert(required_cert: str, held_certs: list[str]) -> str | None:
-    """
-    Find the first held cert that matches the required cert.
+def _industry_matches(required_industry: str, vendor_segments: list[str]) -> bool:
+    """Check if required industry matches vendor's segments with fuzzy matching."""
+    if not required_industry or not vendor_segments:
+        return False
+    req_lower = required_industry.lower()
+    for segment in vendor_segments:
+        seg_lower = segment.lower() if segment else ""
+        # Direct match
+        if req_lower == seg_lower:
+            return True
+        # Partial match (backup-dr matches backup, dr, disaster-recovery)
+        if req_lower in seg_lower or seg_lower in req_lower:
+            return True
+        # Handle common aliases
+        industry_aliases = {
+            "backup-dr": ["backup", "disaster-recovery", "dr", "disaster recovery"],
+            "backup": ["backup-dr"],
+            "disaster-recovery": ["backup-dr", "dr"],
+            "network": ["carrier", "fiber", "wavelength", "interconnection"],
+            "colocation": ["colo", "data center", "datacenter"],
+            "cloud": ["iaas", "paas", "hyperscaler"],
+            "security": ["cybersecurity", "soc", "mdr", "siem"],
+        }
+        if req_lower in industry_aliases:
+            for alias in industry_aliases[req_lower]:
+                if alias in seg_lower:
+                    return True
+    return False
 
-    Returns the actual cert name (e.g., "SOC 2 Type II") or None if no match.
-    """
-    for held_cert in held_certs:
-        if _cert_matches(required_cert, held_cert):
-            return held_cert
+
+def _region_matches(required_region: str, facility_geos: list[str]) -> bool:
+    """Check if any facility is in the required region."""
+    if not required_region:
+        return False
+    req_lower = required_region.lower().replace("-", "").replace("_", "")
+    for geo in facility_geos:
+        geo_lower = (geo.lower() if geo else "").replace("-", "").replace("_", "")
+        # Direct match or substring match
+        if req_lower in geo_lower or geo_lower in req_lower:
+            return True
+        # Handle common region variations
+        region_aliases = {
+            "uswest": ["usw", "west", "california", "oregon", "washington"],
+            "useast": ["use", "east", "virginia", "ashburn", "newyork"],
+            "uscentral": ["usc", "central", "texas", "dallas", "chicago"],
+            "euwest": ["euw", "ireland", "london", "uk", "amsterdam"],
+            "eucentral": ["euc", "frankfurt", "germany", "amsterdam"],
+            "apac": ["asia", "singapore", "tokyo", "sydney", "hongkong"],
+        }
+        if req_lower in region_aliases:
+            for alias in region_aliases[req_lower]:
+                if alias in geo_lower:
+                    return True
+    return False
+
+
+def _city_matches(required_city: str, facility_cities: list[str]) -> bool:
+    """Check if any facility is in or near the required city."""
+    req_lower = required_city.lower()
+    for city in facility_cities:
+        city_lower = city.lower() if city else ""
+        # Direct match or substring match
+        if req_lower in city_lower or city_lower in req_lower:
+            return True
+        # Handle common variations
+        city_aliases = {
+            "silicon valley": ["san jose", "santa clara", "palo alto", "sunnyvale"],
+            "san jose": ["silicon valley"],
+            "ashburn": ["virginia", "northern virginia", "nova"],
+            "dallas": ["dfw", "fort worth", "plano"],
+            "chicago": ["illinois", "il"],
+        }
+        if req_lower in city_aliases:
+            for alias in city_aliases[req_lower]:
+                if alias in city_lower:
+                    return True
+    return False
+
+
+def _service_matches(required_service: str, service_texts: list[str]) -> str | None:
+    """Check if any service matches the required service with keyword matching."""
+    if not required_service:
+        return None
+    req_lower = required_service.lower()
+    
+    # Service keyword mappings for flexible matching
+    service_keywords = {
+        "immutable": ["immutable", "worm", "write-once", "air-gap", "unchangeable"],
+        "disaster-recovery": ["disaster recovery", "dr", "rto", "rpo", "failover", "recovery"],
+        "backup": ["backup", "data protection", "replication"],
+        "wavelength": ["wavelength", "wave", "optical", "dwdm", "lambda"],
+        "dark-fiber": ["dark fiber", "dark-fiber", "unlit fiber"],
+        "colocation": ["colocation", "colo", "rack", "cage", "cabinet"],
+        "interconnection": ["interconnect", "cross-connect", "peering"],
+        "draas": ["draas", "disaster recovery as a service", "dr-as-a-service"],
+    }
+    
+    # Get keywords for this service type
+    keywords = service_keywords.get(req_lower, [req_lower])
+    
+    for svc in service_texts:
+        svc_lower = svc.lower() if svc else ""
+        for keyword in keywords:
+            if keyword in svc_lower:
+                return svc
     return None
 
 
@@ -50,107 +144,87 @@ async def match_vendors(
     request: MatchingRequest, session: AsyncSession
 ) -> list[MatchVendor]:
     """
-    Execute a hard-filter + scoring query against Neo4j Vendor nodes.
+    Execute a comprehensive matching query against Neo4j Vendor nodes.
 
-    Scoring:
-    - +1 if request.industry is in vendor's primary_segments
-    - +1 if request.region matches vendor's region
-    - +1 for each required_cert the vendor holds (via HOLDS relationship)
+    Scoring (each +1):
+    - Industry: request.industry matches vendor's primary_segments (fuzzy)
+    - Region: Each requested region matched by vendor's facilities
+    - Certifications: Each required cert the vendor holds
+    - Services: Each required service the vendor offers (keyword matching)
+    - Locations: Each required city where vendor has facilities
 
     Filtering:
-    - Excludes vendors with risk_score_guess > request.risk_tolerance (when specified)
-    - Excludes vendors missing ANY required_certs (hard filter, not soft score)
-
-    Certification matching uses case-insensitive substring matching:
-    - "SOC 2" matches vendors with "SOC 2 Type II" or "SOC 2 Type I"
-    - "hipaa" matches vendors with "HIPAA"
-
-    Returns vendors with matched_reasons explaining why each vendor matched:
-    - "industry match: <value>"
-    - "region match: <value>"
-    - "risk within tolerance: <vendor_risk> <= <tolerance>"
-    - "holds certification: <cert_name>"
+    - Risk: Excludes vendors with risk_score_guess > threshold
+    - Certifications: Must hold ALL required certs (hard filter)
+    
+    Sorting & Limiting:
+    - sort_by: "risk_asc", "score_desc" (default), "name_asc"
+    - result_limit: Max number of results to return
     """
-    # Build certification matching clause
-    # If required_certs is provided, we filter to vendors that HOLD all of them
-    # and also score based on how many they hold
-    has_cert_filter = len(request.required_certs) > 0
-
-    # Normalize required certs to lowercase for matching
+    # Normalize inputs for matching
     required_certs_lower = [c.lower() for c in request.required_certs]
 
-    if has_cert_filter:
-        # Query that joins certifications and does substring matching in Cypher
-        # Uses toLower() and CONTAINS for case-insensitive substring matching
-        query = """
-        MATCH (v:Vendor)
-        OPTIONAL MATCH (v)-[:HOLDS]->(c:Certification)
-        WITH v, collect(c.name) AS held_certs
-        WITH v, held_certs,
-             CASE WHEN $industry IS NOT NULL AND $industry IN v.primary_segments THEN 1 ELSE 0 END AS segment_score,
-             CASE WHEN $region IS NOT NULL AND v.region = $region THEN 1 ELSE 0 END AS region_score,
-             size([req_cert IN $required_certs_lower WHERE
-                   size([hc IN held_certs WHERE toLower(hc) CONTAINS req_cert]) > 0
-             ]) AS cert_match_count
-        WHERE
-             ($risk_tolerance IS NULL OR v.risk_score_guess IS NULL OR v.risk_score_guess <= $risk_tolerance)
-             AND cert_match_count = size($required_certs_lower)
-        RETURN v.vendor_id AS vendor_id,
-               v.name AS name,
-               (segment_score + region_score + cert_match_count) AS score,
-               v.region AS region,
-               v.primary_segments AS primary_segments,
-               v.risk_score_guess AS risk_score_guess,
-               held_certs
-        ORDER BY score DESC, name ASC
-        LIMIT 20
-        """
-    else:
-        # Original query without certification filtering (but still collect held certs for display)
-        query = """
-        MATCH (v:Vendor)
-        OPTIONAL MATCH (v)-[:HOLDS]->(c:Certification)
-        WITH v, collect(c.name) AS held_certs
-        WITH v, held_certs,
-             CASE WHEN $industry IS NOT NULL AND $industry IN v.primary_segments THEN 1 ELSE 0 END AS segment_score,
-             CASE WHEN $region IS NOT NULL AND v.region = $region THEN 1 ELSE 0 END AS region_score
-        WHERE
-             ($risk_tolerance IS NULL OR v.risk_score_guess IS NULL OR v.risk_score_guess <= $risk_tolerance)
-        RETURN v.vendor_id AS vendor_id,
-               v.name AS name,
-               (segment_score + region_score) AS score,
-               v.region AS region,
-               v.primary_segments AS primary_segments,
-               v.risk_score_guess AS risk_score_guess,
-               held_certs
-        ORDER BY score DESC, name ASC
-        LIMIT 20
-        """
-
-    # Convert risk_tolerance to float for comparison (it's 1-10 scale, risk_score_guess is 0-1)
-    # Risk tolerance mapping:
-    #   1 = very conservative (<=0.20)
-    #   3 = low risk (<=0.30)
-    #   5 = medium risk (<=0.50)
-    #   7 = higher risk (<=0.70)
-    #   10 = any risk (<=1.0)
+    # Determine risk threshold
+    # max_risk_score takes precedence over risk_tolerance
     risk_threshold = None
-    if request.risk_tolerance is not None:
-        # More generous mapping: risk_tolerance * 0.1 with a minimum floor
-        # This allows risk_tolerance=1 to still match vendors with risk_score up to 0.20
+    if request.max_risk_score is not None:
+        risk_threshold = request.max_risk_score
+    elif request.risk_tolerance is not None:
         risk_threshold = max(0.20, request.risk_tolerance / 10.0)
 
-    logger.debug(
-        f"match_vendors: industry={request.industry}, region={request.region}, "
-        f"required_certs={request.required_certs}, "
-        f"risk_tolerance={request.risk_tolerance} -> threshold={risk_threshold}"
+    logger.info(
+        f"match_vendors: industry={request.industry}, regions={request.regions}, "
+        f"cities={request.cities}, certs={request.required_certs}, "
+        f"services={request.required_services}, risk_threshold={risk_threshold}, "
+        f"limit={request.result_limit}, sort={request.sort_by}"
     )
+
+    # Comprehensive query that fetches all related data
+    query = """
+    MATCH (v:Vendor)
+    OPTIONAL MATCH (v)-[:HOLDS]->(c:Certification)
+    OPTIONAL MATCH (v)-[:OFFERS]->(s:Service)
+    OPTIONAL MATCH (v)-[:HAS_FACILITY]->(f:Facility)
+    WITH v,
+         collect(DISTINCT c.name) AS held_certs,
+         collect(DISTINCT {name: s.name, category: s.category, desc: s.description}) AS services_data,
+         collect(DISTINCT {city: f.address, geo: f.geo, tier: f.tier}) AS facilities_data
+    
+    // Calculate base scores in Cypher
+    WITH v, held_certs, services_data, facilities_data,
+         CASE WHEN $industry IS NOT NULL AND $industry IN v.primary_segments THEN 1 ELSE 0 END AS segment_score,
+         CASE WHEN $region IS NOT NULL AND v.region = $region THEN 1 ELSE 0 END AS region_score,
+         // Cert match count (substring matching)
+         size([req_cert IN $required_certs_lower WHERE
+               size([hc IN held_certs WHERE toLower(hc) CONTAINS req_cert]) > 0
+         ]) AS cert_match_count
+    
+    // Apply filters
+    WHERE
+        ($risk_threshold IS NULL OR v.risk_score_guess IS NULL OR v.risk_score_guess <= $risk_threshold)
+        AND (size($required_certs_lower) = 0 OR cert_match_count = size($required_certs_lower))
+    
+    RETURN v.vendor_id AS vendor_id,
+           v.name AS name,
+           v.summary AS summary,
+           v.region AS region,
+           v.primary_segments AS primary_segments,
+           v.risk_score_guess AS risk_score_guess,
+           held_certs,
+           services_data,
+           facilities_data,
+           segment_score,
+           region_score,
+           cert_match_count
+    ORDER BY (segment_score + region_score + cert_match_count) DESC, name ASC
+    LIMIT 30
+    """
 
     result = await session.run(
         query,
         industry=request.industry,
         region=request.region,
-        risk_tolerance=risk_threshold,
+        risk_threshold=risk_threshold,
         required_certs_lower=required_certs_lower,
     )
 
@@ -158,57 +232,145 @@ async def match_vendors(
     async for record in result:
         matched_reasons: list[str] = []
         held_certs = record["held_certs"] or []
+        services_data = record["services_data"] or []
+        facilities_data = record["facilities_data"] or []
 
-        # Track score breakdown
+        # Extract service names/descriptions and facility geos for matching
+        service_texts = []
+        for s in services_data:
+            if s:
+                name = s.get("name", "") or ""
+                desc = s.get("desc", "") or ""
+                cat = s.get("category", "") or ""
+                service_texts.append(f"{name} {desc} {cat}")
+        
+        # Extract facility geo regions AND city names
+        facility_geos = [f.get("geo", "") for f in facilities_data if f and f.get("geo")]
+        facility_cities = [f.get("city", "") for f in facilities_data if f and f.get("city")]
+        all_facility_locations = facility_geos + facility_cities
+
+        # Calculate detailed scores
         industry_score = 0
         region_score = 0
         cert_score = 0
+        service_score = 0
+        location_score = 0
 
-        # Build matched_reasons based on what criteria matched
+        # Industry match - use fuzzy matching
+        primary_segments = record["primary_segments"] or []
+        if request.industry and _industry_matches(request.industry, primary_segments):
+            matched_reasons.append(f"✓ Industry: {request.industry}")
+            industry_score = 1
 
-        # Industry match
-        if request.industry and record["primary_segments"]:
-            if request.industry in record["primary_segments"]:
-                matched_reasons.append(f"industry match: {request.industry}")
-                industry_score = 1
+        # Region match - check requested regions against facility geos
+        vendor_region = record["region"]
+        matched_regions = []
+        for region in request.regions:
+            if _region_matches(region, facility_geos):
+                matched_regions.append(region)
+                region_score += 1
+            # Also check if vendor's HQ region matches
+            elif vendor_region and _region_matches(region, [vendor_region]):
+                matched_regions.append(region)
+                region_score += 1
+            # Global vendors can serve any region (cloud/SaaS providers)
+            elif vendor_region == "global":
+                matched_regions.append(f"{region}*")  # * indicates via global coverage
+                region_score += 1
+        if matched_regions:
+            matched_reasons.append(f"✓ Regions: {', '.join(matched_regions)}")
+        
+        # Legacy single-region match (backward compatibility)
+        if request.region and vendor_region == request.region:
+            if not matched_regions:  # Don't double-count
+                matched_reasons.append(f"✓ HQ Region: {request.region}")
+                region_score += 1
 
-        # Region match
-        if request.region and record["region"]:
-            if request.region == record["region"]:
-                matched_reasons.append(f"region match: {request.region}")
-                region_score = 1
-
-        # Certification matches (case-insensitive substring)
+        # Certification matches
         for cert in request.required_certs:
-            matching_cert = _find_matching_cert(cert, held_certs)
+            matching_cert = _find_match(cert, held_certs)
             if matching_cert:
-                matched_reasons.append(f"holds certification: {matching_cert}")
+                matched_reasons.append(f"✓ Certification: {matching_cert}")
                 cert_score += 1
 
-        # Risk within tolerance
+        # Service matches - use keyword matching
+        for service in request.required_services:
+            matching_service = _service_matches(service, service_texts)
+            if matching_service:
+                # Truncate long service descriptions for display
+                display_svc = matching_service[:60] + "..." if len(matching_service) > 60 else matching_service
+                matched_reasons.append(f"✓ Service: {display_svc}")
+                service_score += 1
+
+        # City/location matches
+        matched_cities = []
+        for city in request.cities:
+            if _city_matches(city, all_facility_locations):
+                matched_cities.append(city)
+                location_score += 1
+        if matched_cities:
+            matched_reasons.append(f"✓ Cities: {', '.join(matched_cities)}")
+
+        # Risk info
         vendor_risk = record["risk_score_guess"]
         if risk_threshold is not None and vendor_risk is not None:
-            matched_reasons.append(
-                f"risk within tolerance: {vendor_risk:.2f} <= {risk_threshold:.2f}"
-            )
+            if vendor_risk <= risk_threshold:
+                matched_reasons.append(f"✓ Risk: {vendor_risk:.2f} ≤ {risk_threshold:.2f}")
+
+        # Calculate total score
+        total_score = industry_score + region_score + cert_score + service_score + location_score
 
         # Build score breakdown
         breakdown = ScoreBreakdown(
             industry=industry_score,
             region=region_score,
             certifications=cert_score,
-            total=industry_score + region_score + cert_score,
+            services=service_score,
+            locations=location_score,
+            total=total_score,
         )
+
+        # Format service and facility lists for display (filter out None values)
+        service_list = [s.get("name") or s.get("desc") or s.get("category") for s in services_data if s]
+        service_list = [s for s in service_list if s]
+        
+        facility_list = [f.get("geo") or f.get("city") for f in facilities_data if f]
+        facility_list = list(set(f for f in facility_list if f))  # Unique, non-None values
+        
+        # Filter None from certifications and segments
+        clean_certs = [c for c in held_certs if c]
+        clean_segments = [s for s in primary_segments if s] if primary_segments else []
 
         vendors.append(
             MatchVendor(
                 vendor_id=record["vendor_id"],
-                name=record["name"],
-                score=float(record["score"]),
+                name=record["name"] or record["vendor_id"],
+                score=float(total_score),
                 score_breakdown=breakdown,
                 matched_reasons=matched_reasons,
+                summary=record["summary"],
+                region=vendor_region,
+                risk_score=vendor_risk,
+                primary_segments=clean_segments,
+                certifications=clean_certs,
+                services=service_list,
+                facilities=facility_list,
             )
         )
 
-    logger.debug(f"match_vendors returned {len(vendors)} vendors")
+    # Apply sorting based on request.sort_by
+    # Always prioritize score first, then apply secondary sort
+    if request.sort_by == "risk_asc":
+        # Sort by score DESC first, then by risk ASC for equal scores
+        vendors.sort(key=lambda v: (-v.score, v.risk_score if v.risk_score is not None else 999, v.name))
+    elif request.sort_by == "name_asc":
+        vendors.sort(key=lambda v: (-v.score, v.name))
+    else:  # Default: score_desc
+        vendors.sort(key=lambda v: (-v.score, v.risk_score if v.risk_score is not None else 999, v.name))
+    
+    # Apply result limit
+    if request.result_limit and request.result_limit > 0:
+        vendors = vendors[:request.result_limit]
+
+    logger.info(f"match_vendors returned {len(vendors)} vendors (limit={request.result_limit}, sort={request.sort_by})")
     return vendors

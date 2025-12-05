@@ -11,23 +11,43 @@ class ServiceRepository:
     def __init__(self, session: AsyncSession) -> None:
         self._session = session
 
-    async def upsert_service(self, service: ServiceBase) -> None:
+    async def upsert_service(self, service: ServiceBase, vendor_id: str | None = None) -> None:
         """
         MERGE Service node by service_id and set all properties.
+        If vendor_id provided, also creates OFFERS relationship.
 
         Uses MERGE to respect unique constraint on service_id.
         """
-        cypher = """
-        MERGE (s:Service {service_id: $service_id})
-        SET s.category = $category,
-            s.description = $description
-        """
-        await self._session.run(
-            cypher,
-            service_id=service.service_id,
-            category=service.category,
-            description=service.description,
-        )
+        if vendor_id:
+            # Create service and relationship to vendor
+            cypher = """
+            MATCH (v:Vendor {vendor_id: $vendor_id})
+            MERGE (s:Service {service_id: $service_id})
+            SET s.category = $category,
+                s.description = $description,
+                s.name = $name
+            MERGE (v)-[:OFFERS]->(s)
+            """
+            await self._session.run(
+                cypher,
+                vendor_id=vendor_id,
+                service_id=service.service_id,
+                category=service.category,
+                description=service.description,
+                name=service.description or service.category,  # Use description as name for display
+            )
+        else:
+            cypher = """
+            MERGE (s:Service {service_id: $service_id})
+            SET s.category = $category,
+                s.description = $description
+            """
+            await self._session.run(
+                cypher,
+                service_id=service.service_id,
+                category=service.category,
+                description=service.description,
+            )
 
     async def get_service_by_id(self, service_id: str) -> ServiceBase | None:
         """

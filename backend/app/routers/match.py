@@ -59,8 +59,12 @@ async def match_nl(
     # Parse natural language into structured MatchingRequest
     matching_request = await parser.parse(nl_request.query)
 
-    # Log the full parsed request for debugging and future LLM tuning
-    logger.info(f"NL parsed request: {matching_request.model_dump()}")
+    # Log the parsed request for debugging
+    logger.info(
+        f"NL parsed: industry={matching_request.industry}, regions={matching_request.regions}, "
+        f"certs={matching_request.required_certs}, services={matching_request.required_services}, "
+        f"risk={matching_request.max_risk_score}, limit={matching_request.result_limit}, sort={matching_request.sort_by}"
+    )
 
     # Execute matching with the structured request
     vendors = await match_vendors(matching_request, session)

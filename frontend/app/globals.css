@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Test: if you see a red body, CSS is loading */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}

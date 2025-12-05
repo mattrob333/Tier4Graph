@@ -51,11 +51,12 @@ async def ingest_services(
     """
     Ingest services for a vendor.
 
+    Creates Service nodes and OFFERS relationships to the Vendor.
     Returns count of inserted services.
     """
     repo = ServiceRepository(session)
     for service in services:
-        await repo.upsert_service(service)
+        await repo.upsert_service(service, vendor_id=vendor_id)
     return {"inserted": len(services)}
 
 

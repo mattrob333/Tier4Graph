@@ -39,7 +39,7 @@ from typing import Any
 import httpx
 
 BASE_URL = "http://localhost:8000"
-RESEARCH_FILE = Path(__file__).parent.parent / "data" / "vendors_research_full.json"
+RESEARCH_FILE = Path(__file__).parent.parent / "data" / "vendors_full_research.json"
 
 
 def extract_region(vendor_data: dict, facilities: list[dict]) -> str | None:
@@ -78,14 +78,15 @@ def build_vendor_payload(vendor_data: dict, facilities: list[dict]) -> dict:
     """
     region = extract_region(vendor_data, facilities)
 
-    # Map primary_segments - handle both "primary_segments" and "segments" field names
-    segments = vendor_data.get("primary_segments") or vendor_data.get("segments") or []
+    # Map primary_segments - handle various field names: segment, segments, primary_segments
+    segments = vendor_data.get("primary_segments") or vendor_data.get("segments") or vendor_data.get("segment") or []
     if isinstance(segments, str):
         segments = [segments]
 
     # Map risk score - handle various field names
     risk_score = (
         vendor_data.get("risk_score_guess")
+        or vendor_data.get("risk_level_guess")
         or vendor_data.get("risk_score")
         or vendor_data.get("risk")
     )
