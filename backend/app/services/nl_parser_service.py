@@ -16,11 +16,13 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import re
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
 from loguru import logger
+from openai import AsyncOpenAI
 
 from app.models.matching import MatchingRequest
 
@@ -210,39 +212,110 @@ class MockNLParser(NLParser):
         return None
 
 
+class OpenAINLParser(NLParser):
+    """LLM-backed NL parser using OpenAI Chat Completions API.
+
+    Uses gpt-4o-mini to extract structured criteria from natural language
+    vendor requirement queries. Falls back to MockNLParser on any error.
+    """
+
+    SYSTEM_PROMPT = """You are a query parser for an IT procurement system. Extract structured criteria from natural language vendor requirement queries.
+
+Return a JSON object with exactly these fields:
+{
+  "industry": string or null (e.g., "colocation", "cloud", "managed-cloud", "healthcare", "network", "interconnection", "enterprise", "edge"),
+  "region": string or null (e.g., "us-east", "us-west", "us-central", "eu-west", "apac", "USA"),
+  "required_certs": array of strings (e.g., ["HIPAA", "SOC 2", "ISO 27001", "PCI DSS", "HITRUST", "FedRAMP"]),
+  "required_services": array of strings (e.g., ["colocation", "interconnection", "disaster-recovery", "bare-metal", "managed-services", "backup", "hybrid-cloud"]),
+  "risk_tolerance": integer 1-10 or null (1=very low risk only, 5=moderate, 10=any risk acceptable)
+}
+
+Rules:
+- Only include fields explicitly mentioned or clearly implied in the query
+- Use null for fields not mentioned
+- Use empty arrays [] for certs/services not mentioned
+- Normalize certification names to standard forms (e.g., "SOC 2" not "SOC2")
+- Return ONLY valid JSON, no explanation"""
+
+    def __init__(self, api_key: str):
+        """Initialize the OpenAI parser.
+
+        Args:
+            api_key: OpenAI API key for authentication.
+        """
+        self.client = AsyncOpenAI(api_key=api_key)
+        self._fallback = MockNLParser()
+
+    async def parse(self, query: str) -> MatchingRequest:
+        """Parse query using OpenAI Chat Completions API.
+
+        Args:
+            query: Free-form text describing vendor requirements.
+
+        Returns:
+            MatchingRequest with extracted criteria.
+            Falls back to MockNLParser on any error.
+        """
+        logger.debug(f"OpenAINLParser parsing query: {query[:100]}...")
+
+        try:
+            response = await self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": self.SYSTEM_PROMPT},
+                    {"role": "user", "content": query},
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=256,
+            )
+
+            content = response.choices[0].message.content
+            if not content:
+                raise ValueError("Empty response from OpenAI")
+
+            data = json.loads(content)
+            logger.debug(f"OpenAI parsed response: {data}")
+
+            result = MatchingRequest(
+                industry=data.get("industry"),
+                region=data.get("region"),
+                required_certs=data.get("required_certs", []),
+                required_services=data.get("required_services", []),
+                risk_tolerance=data.get("risk_tolerance"),
+                text_query=query,
+            )
+
+            logger.info(
+                f"OpenAINLParser extracted: industry={result.industry}, region={result.region}, "
+                f"certs={result.required_certs}, services={result.required_services}, risk={result.risk_tolerance}"
+            )
+            return result
+
+        except Exception as e:
+            logger.error(f"OpenAI parsing failed, falling back to MockNLParser: {e}")
+            return await self._fallback.parse(query)
+
+
 def get_nl_parser(settings: Settings | None = None) -> NLParser:
     """Factory function to get the appropriate NL parser.
 
-    Currently returns MockNLParser. In the future, this will check
-    settings.llm_provider and return the appropriate LLM-backed parser.
+    Selects parser based on settings.llm_provider:
+    - "openai" + api_key: Uses OpenAINLParser (gpt-4o-mini)
+    - Otherwise: Uses MockNLParser (keyword extraction)
 
     Args:
-        settings: Optional Settings instance. If not provided, uses defaults.
+        settings: Optional Settings instance. If not provided, uses MockNLParser.
 
     Returns:
         NLParser implementation based on configuration.
-
-    Example future implementation:
-        if settings and settings.llm_provider == "openai":
-            return OpenAINLParser(api_key=settings.openai_api_key)
-        elif settings and settings.llm_provider == "anthropic":
-            return AnthropicNLParser(api_key=settings.anthropic_api_key)
-        else:
-            return MockNLParser()
     """
-    # TODO: Add LLM-backed parser selection based on settings.llm_provider
-    # For now, always return the mock parser (no API keys required)
-
     if settings is not None:
-        logger.debug(f"get_nl_parser called with llm_provider={getattr(settings, 'llm_provider', None)}")
+        logger.debug(f"get_nl_parser called with llm_provider={settings.llm_provider}")
 
-    # Future: Check settings.llm_provider and instantiate appropriate parser
-    # if settings and settings.llm_provider == "openai" and settings.openai_api_key:
-    #     from app.services.openai_nl_parser import OpenAINLParser
-    #     return OpenAINLParser(api_key=settings.openai_api_key)
-    # elif settings and settings.llm_provider == "anthropic" and settings.anthropic_api_key:
-    #     from app.services.anthropic_nl_parser import AnthropicNLParser
-    #     return AnthropicNLParser(api_key=settings.anthropic_api_key)
+        if settings.llm_provider == "openai" and settings.openai_api_key:
+            logger.info("Using OpenAINLParser")
+            return OpenAINLParser(api_key=settings.openai_api_key)
 
     logger.info("Using MockNLParser (no LLM provider configured)")
     return MockNLParser()
