@@ -68,9 +68,10 @@ async def ingest_certifications(
     """
     Ingest certifications for a vendor.
 
+    Creates Certification nodes and HOLDS relationships to the Vendor.
     Returns count of inserted certifications.
     """
     repo = CertificationRepository(session)
     for cert in certifications:
-        await repo.upsert_certification(cert)
+        await repo.upsert_certification_for_vendor(vendor_id, cert)
     return {"inserted": len(certifications)}

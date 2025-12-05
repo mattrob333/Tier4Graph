@@ -1,0 +1,3271 @@
+{
+  "generated_at": "2025-12-05T15:50:00Z",
+  "vendors": [
+    {
+      "vendor": {
+        "vendor_id": "equinix",
+        "name": "Equinix",
+        "hq_country": "United States",
+        "hq_city": "Redwood City",
+        "segment": "colocation",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.10,
+        "summary": "Equinix is the world's largest digital infrastructure company operating 260+ IBX data centers across 71 metros and 33 countries. Provides carrier-neutral colocation, interconnection services, and direct cloud on-ramps to major hyperscalers. Industry leader in sustainability and network density with 10,000+ networks and 2,000+ cloud/IT services accessible from Platform Equinix.",
+        "market_position": "global leader",
+        "ideal_customer": "enterprises and service providers requiring dense interconnection and global reach",
+        "source_urls": [
+          "https://www.equinix.com",
+          "https://www.equinix.com/data-centers/americas-colocation"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "equinix-ashburn",
+          "name": "Ashburn IBX",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": "Major interconnection hub"
+        },
+        {
+          "facility_id": "equinix-silicon-valley",
+          "name": "Silicon Valley IBX",
+          "city": "San Jose",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": "Tech hub location"
+        },
+        {
+          "facility_id": "equinix-chicago",
+          "name": "Chicago IBX",
+          "city": "Chicago",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": "Financial services hub"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "equinix-colocation",
+          "name": "IBX Colocation",
+          "category": "colocation",
+          "description": "Secure, carrier-neutral colocation with flexible cage and cabinet options"
+        },
+        {
+          "service_id": "equinix-interconnection",
+          "name": "Equinix Fabric",
+          "category": "interconnection",
+          "description": "Software-defined interconnection to 3,000+ service providers and networks"
+        },
+        {
+          "service_id": "equinix-metal",
+          "name": "Equinix Metal",
+          "category": "bare-metal",
+          "description": "Automated bare metal as a service with global deployment"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": "Service Organization Control 2"
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": "Information security management"
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": "Payment card industry compliance"
+        },
+        {
+          "cert_id": "hipaa-ready",
+          "name": "HIPAA Ready",
+          "notes": "Healthcare data protection ready"
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "digital-realty",
+        "name": "Digital Realty",
+        "hq_country": "United States",
+        "hq_city": "Austin",
+        "segment": "colocation",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.12,
+        "summary": "Digital Realty is a global data center REIT operating 300+ facilities across 50+ metros on six continents. Delivers PlatformDIGITAL solutions combining colocation, interconnection, and edge services for hybrid and multi-cloud deployments. Strong focus on sustainability and serving hyperscale and enterprise customers.",
+        "market_position": "global leader",
+        "ideal_customer": "enterprises, cloud providers, and hyperscale customers requiring global footprint",
+        "source_urls": [
+          "https://www.digitalrealty.com",
+          "https://www.digitalrealty.com/data-centers/americas"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "dlr-ashburn",
+          "name": "Ashburn Campus",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": "Data Center Alley mega campus"
+        },
+        {
+          "facility_id": "dlr-santa-clara",
+          "name": "Santa Clara Campus",
+          "city": "Santa Clara",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": "Silicon Valley presence"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "dlr-colocation",
+          "name": "Data Center Colocation",
+          "category": "colocation",
+          "description": "Wholesale and retail colocation with flexible power and space"
+        },
+        {
+          "service_id": "dlr-serviceexchange",
+          "name": "ServiceExchange",
+          "category": "interconnection",
+          "description": "Direct, secure connections to cloud and network providers"
+        },
+        {
+          "service_id": "dlr-platformdigital",
+          "name": "PlatformDIGITAL",
+          "category": "cloud",
+          "description": "Integrated data center platform for hybrid cloud"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "coresite",
+        "name": "CoreSite",
+        "hq_country": "United States",
+        "hq_city": "Denver",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.15,
+        "summary": "CoreSite operates 30 network-dense, cloud-enabled data centers totaling 4.5M sq ft across 11 U.S. markets. Specializes in interconnection hubs with 40,000+ customer cross-connects and direct access to all major cloud providers. Strong focus on low-latency connections and enterprise colocation.",
+        "market_position": "U.S. regional leader",
+        "ideal_customer": "enterprises requiring high-performance interconnection and cloud access",
+        "source_urls": [
+          "https://www.coresite.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "coresite-sv1",
+          "name": "SV1 Santa Clara",
+          "city": "Santa Clara",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "coresite-ny1",
+          "name": "NY1 New York",
+          "city": "New York",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": "32 Avenue of the Americas"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "coresite-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "High-density colocation with flexible power options"
+        },
+        {
+          "service_id": "coresite-interconnection",
+          "name": "Interconnection",
+          "category": "interconnection",
+          "description": "Direct cross-connects to networks and clouds"
+        },
+        {
+          "service_id": "coresite-cloud-onramps",
+          "name": "Cloud On-Ramps",
+          "category": "cloud",
+          "description": "Native connections to AWS, Azure, Google Cloud, Oracle"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa-ready",
+          "name": "HIPAA Ready",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "cyrusone",
+        "name": "CyrusOne",
+        "hq_country": "United States",
+        "hq_city": "Dallas",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west", "apac"],
+        "risk_level_guess": 0.18,
+        "summary": "CyrusOne operates 55+ data centers globally with 16.2M sq ft of capacity across 9 countries. Specializes in hyperscale, build-to-suit, and AI-ready infrastructure with Intelliscale platform for high-density workloads. Strong sustainability commitments targeting climate neutral by 2030.",
+        "market_position": "global hyperscale specialist",
+        "ideal_customer": "hyperscale operators, enterprises requiring AI infrastructure and custom builds",
+        "source_urls": [
+          "https://www.cyrusone.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "cyrusone-dallas",
+          "name": "Dallas Campus",
+          "city": "Dallas",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": "Multiple buildings"
+        },
+        {
+          "facility_id": "cyrusone-phoenix",
+          "name": "Phoenix Campus",
+          "city": "Phoenix",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "cyrusone-hyperscale",
+          "name": "Hyperscale Solutions",
+          "category": "colocation",
+          "description": "Large-scale data center deployments for massive workloads"
+        },
+        {
+          "service_id": "cyrusone-build-to-suit",
+          "name": "Build-to-Suit",
+          "category": "colocation",
+          "description": "Custom-designed facilities aligned to business objectives"
+        },
+        {
+          "service_id": "cyrusone-intelliscale",
+          "name": "Intelliscale AI",
+          "category": "colocation",
+          "description": "Purpose-built AI infrastructure with high power density"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "flexential",
+        "name": "Flexential",
+        "hq_country": "United States",
+        "hq_city": "Charlotte",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.20,
+        "summary": "Flexential operates 40+ data centers across the U.S. providing colocation, cloud, connectivity, and data protection services. NVIDIA DGX-Ready partner specializing in high-density AI infrastructure. FlexAnywhere platform offers flexible hybrid IT solutions with strong managed services.",
+        "market_position": "U.S. regional provider",
+        "ideal_customer": "enterprises requiring hybrid infrastructure and managed services",
+        "source_urls": [
+          "https://www.flexential.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "flexential-atlanta",
+          "name": "Atlanta Data Center",
+          "city": "Atlanta",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "flexential-portland",
+          "name": "Portland Data Center",
+          "city": "Portland",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "flexential-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Scalable colocation with flexible power and space"
+        },
+        {
+          "service_id": "flexential-cloud",
+          "name": "FlexAnywhere Cloud",
+          "category": "cloud",
+          "description": "Hybrid cloud solutions across multiple platforms"
+        },
+        {
+          "service_id": "flexential-interconnection",
+          "name": "Interconnection",
+          "category": "interconnection",
+          "description": "Network and cloud connectivity services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "qts-realty",
+        "name": "QTS Realty Trust",
+        "hq_country": "United States",
+        "hq_city": "Overland Park",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west"],
+        "risk_level_guess": 0.16,
+        "summary": "QTS operates 75 data centers across North America and Europe providing custom data center (C1), colocation (C2), and managed services (C3). Acquired by Blackstone in 2021. Focuses on hybrid IT solutions for large enterprises with integrated technology platform.",
+        "market_position": "enterprise provider",
+        "ideal_customer": "large enterprises requiring custom hybrid cloud solutions",
+        "source_urls": [
+          "https://www.qtsdatacenters.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "qts-atlanta",
+          "name": "Atlanta-Metro Data Center",
+          "city": "Atlanta",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "qts-ashburn",
+          "name": "Ashburn Campus",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "qts-colocation",
+          "name": "Colocation (C2)",
+          "category": "colocation",
+          "description": "Secure colocation with flexible configurations"
+        },
+        {
+          "service_id": "qts-custom",
+          "name": "Custom Data Center (C1)",
+          "category": "colocation",
+          "description": "Tailored data center environments"
+        },
+        {
+          "service_id": "qts-managed",
+          "name": "Cloud & Managed Services (C3)",
+          "category": "managed-services",
+          "description": "Fully managed cloud and infrastructure services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "databank",
+        "name": "DataBank",
+        "hq_country": "United States",
+        "hq_city": "Dallas",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.22,
+        "summary": "DataBank operates 69+ data centers across 27 U.S. markets providing colocation, connectivity, and cloud services. Focuses on edge-to-core deployments with strong presence in secondary and tertiary markets. Offers flexible colocation and interconnection solutions.",
+        "market_position": "regional edge specialist",
+        "ideal_customer": "enterprises requiring edge locations and regional coverage",
+        "source_urls": [
+          "https://www.databank.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "databank-dallas",
+          "name": "Dallas Data Center",
+          "city": "Dallas",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "databank-salt-lake",
+          "name": "Salt Lake City Data Center",
+          "city": "Salt Lake City",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "databank-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Flexible colocation in edge and core markets"
+        },
+        {
+          "service_id": "databank-connectivity",
+          "name": "Connectivity",
+          "category": "network",
+          "description": "Network and cloud connectivity services"
+        },
+        {
+          "service_id": "databank-cloud",
+          "name": "Cloud Services",
+          "category": "cloud",
+          "description": "Hybrid cloud infrastructure solutions"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "switch",
+        "name": "Switch",
+        "hq_country": "United States",
+        "hq_city": "Las Vegas",
+        "segment": "colocation",
+        "regions_served": ["us-west"],
+        "risk_level_guess": 0.24,
+        "summary": "Switch operates Tier IV Gold certified data centers in Las Vegas, Reno, Grand Rapids, and Atlanta. Known for patented technologies and focus on sustainability using 100% renewable energy. Specializes in large-scale deployments with enterprise and hyperscale customers.",
+        "market_position": "Tier IV specialist",
+        "ideal_customer": "enterprises requiring Tier IV reliability and sustainable infrastructure",
+        "source_urls": [
+          "https://www.switch.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "switch-las-vegas",
+          "name": "The Core Campus",
+          "city": "Las Vegas",
+          "region": "us-west",
+          "tier_rating": "Tier IV Gold",
+          "notes": "World's largest Tier IV campus"
+        },
+        {
+          "facility_id": "switch-reno",
+          "name": "Tahoe Reno Edge",
+          "city": "Reno",
+          "region": "us-west",
+          "tier_rating": "Tier IV",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "switch-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Tier IV colocation with patented technologies"
+        },
+        {
+          "service_id": "switch-connectivity",
+          "name": "Connectivity",
+          "category": "interconnection",
+          "description": "High-performance network connectivity"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "vantage-data-centers",
+        "name": "Vantage Data Centers",
+        "hq_country": "United States",
+        "hq_city": "Denver",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west"],
+        "risk_level_guess": 0.19,
+        "summary": "Vantage Data Centers designs, builds, and operates carrier-neutral data centers across North America and Europe. Focuses on hyperscale and wholesale colocation with sustainable campus developments. Backed by Digital Bridge and known for rapid deployment capabilities.",
+        "market_position": "hyperscale provider",
+        "ideal_customer": "hyperscale customers and large enterprises requiring wholesale capacity",
+        "source_urls": [
+          "https://vantage-dc.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "vantage-santa-clara",
+          "name": "Santa Clara Campus",
+          "city": "Santa Clara",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "vantage-ashburn",
+          "name": "Ashburn Campus",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "vantage-hyperscale",
+          "name": "Hyperscale Colocation",
+          "category": "colocation",
+          "description": "Large-scale wholesale data center capacity"
+        },
+        {
+          "service_id": "vantage-build-to-suit",
+          "name": "Build-to-Suit",
+          "category": "colocation",
+          "description": "Custom campus developments"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "ntt-global-data-centers",
+        "name": "NTT Global Data Centers",
+        "hq_country": "Japan",
+        "hq_city": "Tokyo",
+        "segment": "colocation",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.14,
+        "summary": "NTT operates 160+ data centers worldwide across 20+ countries and regions. Part of NTT Ltd., provides carrier-neutral colocation, cloud, and managed services. Strong presence in Asia-Pacific with global Tier 1 IP backbone. Leading sustainability initiatives.",
+        "market_position": "global provider",
+        "ideal_customer": "multinational enterprises requiring global footprint and Asian presence",
+        "source_urls": [
+          "https://www.global.ntt"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "ntt-ashburn",
+          "name": "Ashburn VA1",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "ntt-tokyo",
+          "name": "Tokyo CC2",
+          "city": "Tokyo",
+          "region": "apac",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "ntt-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Global carrier-neutral colocation services"
+        },
+        {
+          "service_id": "ntt-connectivity",
+          "name": "Network Connectivity",
+          "category": "network",
+          "description": "Global Tier 1 IP backbone connectivity"
+        },
+        {
+          "service_id": "ntt-cloud",
+          "name": "Managed Cloud",
+          "category": "cloud",
+          "description": "Multi-cloud management services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "zayo",
+        "name": "Zayo Group",
+        "hq_country": "United States",
+        "hq_city": "Boulder",
+        "segment": "network",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west"],
+        "risk_level_guess": 0.21,
+        "summary": "Zayo provides fiber infrastructure, colocation, and bandwidth connectivity solutions. Operates 133,000+ route miles of fiber connecting 1,700+ data centers globally. DynamicLink NaaS platform offers on-demand network services. Strong focus on dark fiber, wavelengths, and Ethernet services.",
+        "market_position": "fiber infrastructure leader",
+        "ideal_customer": "carriers, enterprises, and data centers requiring fiber connectivity",
+        "source_urls": [
+          "https://www.zayo.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "zayo-dark-fiber",
+          "name": "Dark Fiber",
+          "category": "network",
+          "description": "Unlit fiber optic infrastructure for custom networks"
+        },
+        {
+          "service_id": "zayo-wavelengths",
+          "name": "Wavelengths",
+          "category": "network",
+          "description": "Dedicated optical wavelength services"
+        },
+        {
+          "service_id": "zayo-ethernet",
+          "name": "Ethernet",
+          "category": "network",
+          "description": "Layer 2 Ethernet private line services"
+        },
+        {
+          "service_id": "zayo-dynamiclink",
+          "name": "DynamicLink NaaS",
+          "category": "network",
+          "description": "Network-as-a-service with rapid deployment"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "lumen",
+        "name": "Lumen Technologies",
+        "hq_country": "United States",
+        "hq_city": "Monroe",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.23,
+        "summary": "Lumen operates one of the world's most extensive fiber networks with 450,000+ route miles globally. Provides DIA, Ethernet, wavelengths, SD-WAN, and security services. Building AI-ready network infrastructure with Private Connectivity Fabric. Tier 1 IP backbone provider.",
+        "market_position": "global carrier",
+        "ideal_customer": "enterprises requiring global network connectivity and AI infrastructure",
+        "source_urls": [
+          "https://www.lumen.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "lumen-dia",
+          "name": "Dedicated Internet Access",
+          "category": "network",
+          "description": "Enterprise-grade dedicated internet up to 100Gbps"
+        },
+        {
+          "service_id": "lumen-ethernet",
+          "name": "Ethernet",
+          "category": "network",
+          "description": "Private line Ethernet connectivity"
+        },
+        {
+          "service_id": "lumen-wavelengths",
+          "name": "Wavelengths",
+          "category": "network",
+          "description": "1-400 Gbps optical wavelength services"
+        },
+        {
+          "service_id": "lumen-pcf",
+          "name": "Private Connectivity Fabric",
+          "category": "interconnection",
+          "description": "Software-defined multicloud interconnection"
+        },
+        {
+          "service_id": "lumen-security",
+          "name": "Security Solutions",
+          "category": "security",
+          "description": "Network security and DDoS protection"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "vultr",
+        "name": "Vultr",
+        "hq_country": "United States",
+        "hq_city": "Matawan",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.28,
+        "summary": "Vultr provides cloud compute, bare metal, and Kubernetes across 32 global locations. Offers high-performance SSD cloud servers, dedicated instances, and GPU acceleration. Developer-friendly platform with instant deployment and hourly billing. NVIDIA partner for AI workloads.",
+        "market_position": "budget cloud provider",
+        "ideal_customer": "developers and SMBs requiring affordable global cloud infrastructure",
+        "source_urls": [
+          "https://www.vultr.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "vultr-new-jersey",
+          "name": "New Jersey",
+          "city": "Piscataway",
+          "region": "us-east",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "vultr-silicon-valley",
+          "name": "Silicon Valley",
+          "city": "San Jose",
+          "region": "us-west",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "vultr-cloud-compute",
+          "name": "Cloud Compute",
+          "category": "cloud",
+          "description": "High-performance SSD cloud instances"
+        },
+        {
+          "service_id": "vultr-bare-metal",
+          "name": "Bare Metal",
+          "category": "bare-metal",
+          "description": "Single-tenant dedicated servers"
+        },
+        {
+          "service_id": "vultr-kubernetes",
+          "name": "Kubernetes Engine",
+          "category": "cloud",
+          "description": "Managed Kubernetes clusters"
+        },
+        {
+          "service_id": "vultr-cloud-gpu",
+          "name": "Cloud GPU",
+          "category": "cloud",
+          "description": "NVIDIA GPU instances for AI/ML"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "ovhcloud",
+        "name": "OVHcloud",
+        "hq_country": "France",
+        "hq_city": "Roubaix",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.27,
+        "summary": "OVHcloud is Europe's largest cloud provider operating 37 data centers worldwide. Offers bare metal servers, public cloud, private cloud, and web hosting. Known for competitive pricing and GDPR compliance. Strong presence in Europe with expanding global footprint.",
+        "market_position": "European cloud leader",
+        "ideal_customer": "European enterprises and developers requiring GDPR-compliant infrastructure",
+        "source_urls": [
+          "https://us.ovhcloud.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "ovh-beauharnois",
+          "name": "Beauharnois",
+          "city": "Beauharnois",
+          "region": "us-east",
+          "tier_rating": null,
+          "notes": "Quebec data center"
+        },
+        {
+          "facility_id": "ovh-hillsboro",
+          "name": "Hillsboro",
+          "city": "Hillsboro",
+          "region": "us-west",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "ovh-bare-metal",
+          "name": "Bare Metal Servers",
+          "category": "bare-metal",
+          "description": "Dedicated servers with instant deployment"
+        },
+        {
+          "service_id": "ovh-public-cloud",
+          "name": "Public Cloud",
+          "category": "cloud",
+          "description": "OpenStack-based public cloud"
+        },
+        {
+          "service_id": "ovh-private-cloud",
+          "name": "Private Cloud",
+          "category": "cloud",
+          "description": "VMware-based private cloud"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "hetzner",
+        "name": "Hetzner",
+        "hq_country": "Germany",
+        "hq_city": "Gunzenhausen",
+        "segment": "cloud",
+        "regions_served": ["eu-west", "us-east", "us-west", "apac"],
+        "risk_level_guess": 0.30,
+        "summary": "Hetzner provides affordable dedicated servers, cloud hosting, and colocation from Germany, Finland, and U.S. locations. Known for excellent price-to-performance ratio and sustainable operations using 100% green energy. Popular with developers and cost-conscious enterprises.",
+        "market_position": "budget provider",
+        "ideal_customer": "developers and SMBs seeking affordable European hosting",
+        "source_urls": [
+          "https://www.hetzner.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "hetzner-nuremberg",
+          "name": "Nuremberg",
+          "city": "Nuremberg",
+          "region": "eu-west",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "hetzner-hillsboro",
+          "name": "Hillsboro",
+          "city": "Hillsboro",
+          "region": "us-west",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "hetzner-ashburn",
+          "name": "Ashburn",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "hetzner-dedicated",
+          "name": "Dedicated Servers",
+          "category": "bare-metal",
+          "description": "Dedicated root servers with server auction"
+        },
+        {
+          "service_id": "hetzner-cloud",
+          "name": "Cloud",
+          "category": "cloud",
+          "description": "Scalable cloud servers with hourly billing"
+        },
+        {
+          "service_id": "hetzner-storage",
+          "name": "Storage Box",
+          "category": "storage",
+          "description": "Network-attached storage solutions"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "linode-akamai",
+        "name": "Linode (Akamai)",
+        "hq_country": "United States",
+        "hq_city": "Philadelphia",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.17,
+        "summary": "Linode, acquired by Akamai in 2022, provides Linux cloud hosting, Kubernetes, object storage, and managed databases across 11 global regions. Developer-focused platform with transparent pricing and strong community. Now integrated with Akamai's edge network and CDN capabilities.",
+        "market_position": "developer cloud provider",
+        "ideal_customer": "developers and startups requiring simple, affordable cloud infrastructure",
+        "source_urls": [
+          "https://www.linode.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "linode-newark",
+          "name": "Newark",
+          "city": "Newark",
+          "region": "us-east",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "linode-fremont",
+          "name": "Fremont",
+          "city": "Fremont",
+          "region": "us-west",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "linode-compute",
+          "name": "Compute Instances",
+          "category": "cloud",
+          "description": "Linux virtual machines with SSD storage"
+        },
+        {
+          "service_id": "linode-kubernetes",
+          "name": "Kubernetes",
+          "category": "cloud",
+          "description": "Managed Kubernetes engine"
+        },
+        {
+          "service_id": "linode-object-storage",
+          "name": "Object Storage",
+          "category": "storage",
+          "description": "S3-compatible object storage"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "digitalocean",
+        "name": "DigitalOcean",
+        "hq_country": "United States",
+        "hq_city": "New York",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.25,
+        "summary": "DigitalOcean provides cloud infrastructure for developers with droplets (VMs), Kubernetes, databases, and app platform across 15 global data centers. Known for simplicity, transparent pricing, and developer-friendly tools. Strong community and extensive documentation.",
+        "market_position": "developer cloud platform",
+        "ideal_customer": "startups, developers, and SMBs building cloud-native applications",
+        "source_urls": [
+          "https://www.digitalocean.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "do-nyc",
+          "name": "New York",
+          "city": "New York",
+          "region": "us-east",
+          "tier_rating": null,
+          "notes": "Multiple NYC locations"
+        },
+        {
+          "facility_id": "do-sfo",
+          "name": "San Francisco",
+          "city": "San Francisco",
+          "region": "us-west",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "do-droplets",
+          "name": "Droplets",
+          "category": "cloud",
+          "description": "Scalable virtual machines"
+        },
+        {
+          "service_id": "do-kubernetes",
+          "name": "Kubernetes",
+          "category": "cloud",
+          "description": "Managed Kubernetes clusters"
+        },
+        {
+          "service_id": "do-app-platform",
+          "name": "App Platform",
+          "category": "cloud",
+          "description": "PaaS for deploying applications"
+        },
+        {
+          "service_id": "do-spaces",
+          "name": "Spaces",
+          "category": "storage",
+          "description": "Object storage with CDN"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "rackspace",
+        "name": "Rackspace Technology",
+        "hq_country": "United States",
+        "hq_city": "San Antonio",
+        "segment": "managed-services",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.26,
+        "summary": "Rackspace provides multicloud solutions and managed services across AWS, Azure, and Google Cloud. Fanatical Support for delivering managed public cloud, private cloud, and hybrid infrastructure. Over 120,000 customers worldwide with deep cloud expertise.",
+        "market_position": "managed cloud leader",
+        "ideal_customer": "enterprises requiring managed multicloud services and migration support",
+        "source_urls": [
+          "https://www.rackspace.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "rackspace-managed-aws",
+          "name": "Managed AWS",
+          "category": "managed-services",
+          "description": "Fully managed Amazon Web Services"
+        },
+        {
+          "service_id": "rackspace-managed-azure",
+          "name": "Managed Azure",
+          "category": "managed-services",
+          "description": "Fully managed Microsoft Azure"
+        },
+        {
+          "service_id": "rackspace-managed-gcp",
+          "name": "Managed Google Cloud",
+          "category": "managed-services",
+          "description": "Fully managed Google Cloud Platform"
+        },
+        {
+          "service_id": "rackspace-professional",
+          "name": "Professional Services",
+          "category": "managed-services",
+          "description": "Cloud migration and optimization consulting"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "arctic-wolf",
+        "name": "Arctic Wolf",
+        "hq_country": "United States",
+        "hq_city": "Eden Prairie",
+        "segment": "security",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west"],
+        "risk_level_guess": 0.22,
+        "summary": "Arctic Wolf provides 24/7 managed detection and response (MDR), security operations, and incident response services. Concierge security team model combining technology platform with expert analysts. Focuses on SMB and mid-market customers with tailored security operations.",
+        "market_position": "MDR leader",
+        "ideal_customer": "SMBs and mid-market enterprises requiring 24/7 SOC services",
+        "source_urls": [
+          "https://arcticwolf.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "arctic-wolf-mdr",
+          "name": "Managed Detection and Response",
+          "category": "security",
+          "description": "24/7 threat monitoring and response"
+        },
+        {
+          "service_id": "arctic-wolf-managed-risk",
+          "name": "Managed Risk",
+          "category": "security",
+          "description": "Vulnerability management and risk assessment"
+        },
+        {
+          "service_id": "arctic-wolf-incident-response",
+          "name": "Incident Response",
+          "category": "security",
+          "description": "On-demand breach response services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "rapid7",
+        "name": "Rapid7",
+        "hq_country": "United States",
+        "hq_city": "Boston",
+        "segment": "security",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.20,
+        "summary": "Rapid7 provides vulnerability management, SIEM, MDR, and security analytics solutions. InsightVM, InsightIDR, and MDR services deliver comprehensive threat detection and response. Strong focus on visibility, analytics, and automation with 24/7 SOC operations.",
+        "market_position": "security platform provider",
+        "ideal_customer": "enterprises requiring integrated security operations and vulnerability management",
+        "source_urls": [
+          "https://www.rapid7.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "rapid7-mdr",
+          "name": "Managed Detection and Response",
+          "category": "security",
+          "description": "24/7 SOC with unlimited IR included"
+        },
+        {
+          "service_id": "rapid7-insightidr",
+          "name": "InsightIDR",
+          "category": "security",
+          "description": "Cloud SIEM and XDR platform"
+        },
+        {
+          "service_id": "rapid7-insightvm",
+          "name": "InsightVM",
+          "category": "security",
+          "description": "Vulnerability management and assessment"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "secureworks",
+        "name": "Secureworks",
+        "hq_country": "United States",
+        "hq_city": "Atlanta",
+        "segment": "security",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.18,
+        "summary": "Secureworks, a Dell Technologies company, provides managed security services including MDR, EDR, and threat intelligence. Taegis XDR platform combines AI-driven analytics with expert SOC analysts. Over 4,000 customers across 50+ countries with global threat visibility.",
+        "market_position": "enterprise MSSP",
+        "ideal_customer": "large enterprises requiring comprehensive managed security",
+        "source_urls": [
+          "https://www.secureworks.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "secureworks-taegis-mdr",
+          "name": "Taegis MDR",
+          "category": "security",
+          "description": "AI-powered managed detection and response"
+        },
+        {
+          "service_id": "secureworks-taegis-xdr",
+          "name": "Taegis XDR",
+          "category": "security",
+          "description": "Extended detection and response platform"
+        },
+        {
+          "service_id": "secureworks-threat-intelligence",
+          "name": "Threat Intelligence",
+          "category": "security",
+          "description": "Counter Threat Unit research and intelligence"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "cloudflare",
+        "name": "Cloudflare",
+        "hq_country": "United States",
+        "hq_city": "San Francisco",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.15,
+        "summary": "Cloudflare operates a global edge network spanning 330+ cities in 120+ countries. Provides CDN, DDoS protection, WAF, Zero Trust security, and edge computing. Powers ~20% of Fortune 1000 websites. Known for performance, security, and developer-friendly platform.",
+        "market_position": "edge platform leader",
+        "ideal_customer": "web properties and applications requiring global performance and security",
+        "source_urls": [
+          "https://www.cloudflare.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "cloudflare-cdn",
+          "name": "Content Delivery Network",
+          "category": "network",
+          "description": "Global CDN with edge caching"
+        },
+        {
+          "service_id": "cloudflare-ddos",
+          "name": "DDoS Protection",
+          "category": "security",
+          "description": "Unmetered DDoS mitigation"
+        },
+        {
+          "service_id": "cloudflare-zero-trust",
+          "name": "Zero Trust",
+          "category": "security",
+          "description": "SASE and Zero Trust Network Access"
+        },
+        {
+          "service_id": "cloudflare-workers",
+          "name": "Workers",
+          "category": "cloud",
+          "description": "Serverless edge computing platform"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "akamai",
+        "name": "Akamai Technologies",
+        "hq_country": "United States",
+        "hq_city": "Cambridge",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.13,
+        "summary": "Akamai operates the world's largest CDN with 365,000+ servers across 135+ countries, delivering 15-30% of global web traffic. Provides CDN, security, and edge computing services. Industry pioneer with comprehensive DDoS protection and web application security.",
+        "market_position": "CDN pioneer",
+        "ideal_customer": "large enterprises and media companies requiring massive scale and security",
+        "source_urls": [
+          "https://www.akamai.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "akamai-cdn",
+          "name": "Content Delivery",
+          "category": "network",
+          "description": "Global content delivery network"
+        },
+        {
+          "service_id": "akamai-security",
+          "name": "Cloud Security",
+          "category": "security",
+          "description": "DDoS, WAF, and bot management"
+        },
+        {
+          "service_id": "akamai-edge-compute",
+          "name": "Edge Compute",
+          "category": "edge-computing",
+          "description": "EdgeWorkers serverless platform"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "fastly",
+        "name": "Fastly",
+        "hq_country": "United States",
+        "hq_city": "San Francisco",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.29,
+        "summary": "Fastly provides edge cloud platform with CDN, security, and compute services across 70+ global PoPs. Real-time content delivery with instant purge capabilities. Strong developer focus with Compute@Edge platform. Known for configurability and real-time analytics.",
+        "market_position": "edge platform provider",
+        "ideal_customer": "developers and digital businesses requiring real-time edge capabilities",
+        "source_urls": [
+          "https://www.fastly.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "fastly-cdn",
+          "name": "Content Delivery",
+          "category": "network",
+          "description": "Real-time edge CDN with instant purge"
+        },
+        {
+          "service_id": "fastly-compute",
+          "name": "Compute@Edge",
+          "category": "edge-computing",
+          "description": "Serverless compute at the edge"
+        },
+        {
+          "service_id": "fastly-security",
+          "name": "Next-Gen WAF",
+          "category": "security",
+          "description": "Web application firewall and DDoS protection"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "veeam",
+        "name": "Veeam",
+        "hq_country": "Switzerland",
+        "hq_city": "Baar",
+        "segment": "backup-dr",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.16,
+        "summary": "Veeam provides data protection and ransomware recovery solutions for virtual, physical, and cloud environments. Veeam Backup & Replication protects 550,000+ customers worldwide. Strong VMware and Hyper-V integration with cloud-native backup for AWS, Azure, and Google Cloud.",
+        "market_position": "backup market leader",
+        "ideal_customer": "enterprises requiring comprehensive data protection across hybrid environments",
+        "source_urls": [
+          "https://www.veeam.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "veeam-backup-replication",
+          "name": "Backup & Replication",
+          "category": "backup-dr",
+          "description": "Enterprise backup and disaster recovery"
+        },
+        {
+          "service_id": "veeam-cloud-backup",
+          "name": "Cloud Data Platform",
+          "category": "backup-dr",
+          "description": "Cloud-native backup for AWS, Azure, GCP"
+        },
+        {
+          "service_id": "veeam-ransomware-recovery",
+          "name": "Ransomware Recovery",
+          "category": "backup-dr",
+          "description": "Immutable backups and recovery orchestration"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "acronis",
+        "name": "Acronis",
+        "hq_country": "Switzerland",
+        "hq_city": "Schaffhausen",
+        "segment": "backup-dr",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.24,
+        "summary": "Acronis provides cyber protection solutions combining backup, disaster recovery, and cybersecurity. Acronis Cyber Protect Cloud serves over 750,000 businesses. AI-powered protection against ransomware with integrated anti-malware. Strong MSP focus with white-label capabilities.",
+        "market_position": "cyber protection provider",
+        "ideal_customer": "MSPs and enterprises requiring integrated backup and security",
+        "source_urls": [
+          "https://www.acronis.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "acronis-cyber-protect",
+          "name": "Cyber Protect Cloud",
+          "category": "backup-dr",
+          "description": "Integrated backup, DR, and cybersecurity"
+        },
+        {
+          "service_id": "acronis-disaster-recovery",
+          "name": "Disaster Recovery",
+          "category": "backup-dr",
+          "description": "Cloud-based DRaaS with instant recovery"
+        },
+        {
+          "service_id": "acronis-file-sync",
+          "name": "File Sync & Share",
+          "category": "storage",
+          "description": "Secure file collaboration platform"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "datto",
+        "name": "Datto (Kaseya)",
+        "hq_country": "United States",
+        "hq_city": "Norwalk",
+        "segment": "backup-dr",
+        "regions_served": ["us-east", "us-west", "eu-west"],
+        "risk_level_guess": 0.26,
+        "summary": "Datto, now part of Kaseya, provides business continuity and disaster recovery solutions for MSPs. SIRIS appliances offer local and cloud backup with instant virtualization. Screenshot verification ensures backup integrity. Strong MSP channel with unified RMM integration.",
+        "market_position": "MSP-focused BCDR",
+        "ideal_customer": "MSPs and SMBs requiring appliance-based backup and recovery",
+        "source_urls": [
+          "https://www.datto.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "datto-siris",
+          "name": "Datto SIRIS",
+          "category": "backup-dr",
+          "description": "All-in-one BDR appliance with cloud replication"
+        },
+        {
+          "service_id": "datto-alto",
+          "name": "Datto Alto",
+          "category": "backup-dr",
+          "description": "Cloud-first backup for smaller environments"
+        },
+        {
+          "service_id": "datto-saas-protection",
+          "name": "SaaS Protection",
+          "category": "backup-dr",
+          "description": "Backup for Microsoft 365 and Google Workspace"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "phoenixnap",
+        "name": "phoenixNAP",
+        "hq_country": "United States",
+        "hq_city": "Phoenix",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.28,
+        "summary": "phoenixNAP provides colocation, dedicated servers, cloud, and bare metal across strategic U.S. locations. Carrier-neutral facilities with enterprise-grade infrastructure. Focus on customized solutions with flexible pricing models. Strong presence in Phoenix metro area.",
+        "market_position": "regional provider",
+        "ideal_customer": "enterprises requiring flexible U.S. colocation and bare metal",
+        "source_urls": [
+          "https://phoenixnap.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "pnap-phoenix",
+          "name": "Phoenix Data Center",
+          "city": "Phoenix",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": "Flagship facility"
+        },
+        {
+          "facility_id": "pnap-ashburn",
+          "name": "Ashburn Data Center",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "pnap-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Carrier-neutral colocation with flexible terms"
+        },
+        {
+          "service_id": "pnap-bare-metal",
+          "name": "Bare Metal Cloud",
+          "category": "bare-metal",
+          "description": "Automated bare metal servers"
+        },
+        {
+          "service_id": "pnap-dedicated",
+          "name": "Dedicated Servers",
+          "category": "bare-metal",
+          "description": "Managed dedicated server hosting"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "atlantic-net",
+        "name": "Atlantic.Net",
+        "hq_country": "United States",
+        "hq_city": "Orlando",
+        "segment": "cloud",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west"],
+        "risk_level_guess": 0.32,
+        "summary": "Atlantic.Net provides HIPAA-compliant cloud hosting, VPS, dedicated servers, and colocation. Strong focus on healthcare and financial services with comprehensive compliance. Operates own data centers in U.S. with managed service options. Known for security and compliance expertise.",
+        "market_position": "compliance-focused provider",
+        "ideal_customer": "healthcare and regulated industries requiring HIPAA and SOC 2 compliance",
+        "source_urls": [
+          "https://www.atlantic.net"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "atlantic-orlando",
+          "name": "Orlando Data Center",
+          "city": "Orlando",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": "HIPAA-compliant facility"
+        },
+        {
+          "facility_id": "atlantic-dallas",
+          "name": "Dallas Data Center",
+          "city": "Dallas",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "atlantic-hipaa-cloud",
+          "name": "HIPAA Cloud Hosting",
+          "category": "cloud",
+          "description": "Compliant cloud infrastructure with BAA"
+        },
+        {
+          "service_id": "atlantic-vps",
+          "name": "VPS Hosting",
+          "category": "cloud",
+          "description": "Virtual private servers with SSD storage"
+        },
+        {
+          "service_id": "atlantic-dedicated",
+          "name": "Dedicated Servers",
+          "category": "bare-metal",
+          "description": "Managed dedicated hosting"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": "With BAA"
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "cogent",
+        "name": "Cogent Communications",
+        "hq_country": "United States",
+        "hq_city": "Washington DC",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.20,
+        "summary": "Cogent is a Tier 1 ISP operating one of the world's largest IP networks with 78,000+ route miles. Provides high-bandwidth Internet connectivity and colocation services. Known for aggressive pricing and extensive fiber footprint. Consistently ranked among top five global networks.",
+        "market_position": "Tier 1 carrier",
+        "ideal_customer": "bandwidth-intensive businesses and service providers",
+        "source_urls": [
+          "https://www.cogentco.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "cogent-internet",
+          "name": "Dedicated Internet",
+          "category": "network",
+          "description": "High-capacity Internet connectivity"
+        },
+        {
+          "service_id": "cogent-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Data center space with network connectivity"
+        },
+        {
+          "service_id": "cogent-ethernet",
+          "name": "Ethernet",
+          "category": "network",
+          "description": "Point-to-point Ethernet services"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "arelion",
+        "name": "Arelion (formerly Telia Carrier)",
+        "hq_country": "Sweden",
+        "hq_city": "Solna",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.17,
+        "summary": "Arelion operates AS1299, ranked #1 Tier 1 backbone by CAIDA. Provides IP transit, Ethernet, wavelengths, and cloud connectivity across 128 countries. Part of Polhem Infra. Extensive fiber network with strong European and transatlantic presence. Focus on high-performance global connectivity.",
+        "market_position": "Tier 1 global carrier",
+        "ideal_customer": "carriers, cloud providers, and enterprises requiring global IP transit",
+        "source_urls": [
+          "https://www.arelion.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "arelion-ip-transit",
+          "name": "IP Transit",
+          "category": "network",
+          "description": "Global Tier 1 IP backbone connectivity"
+        },
+        {
+          "service_id": "arelion-ethernet",
+          "name": "Ethernet",
+          "category": "network",
+          "description": "Point-to-point and multipoint Ethernet"
+        },
+        {
+          "service_id": "arelion-wavelengths",
+          "name": "Wavelengths",
+          "category": "network",
+          "description": "Dedicated optical wavelength services"
+        },
+        {
+          "service_id": "arelion-cloud-connect",
+          "name": "Cloud Connect",
+          "category": "interconnection",
+          "description": "Direct connections to cloud providers"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "gtt",
+        "name": "GTT Communications",
+        "hq_country": "United States",
+        "hq_city": "McLean",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.35,
+        "summary": "GTT provides global Tier 1 IP network, Ethernet, and SD-WAN services to multinational enterprises. Operates backbone across North America, Europe, and Asia. Focus on managed WAN and cloud networking. Known for enterprise connectivity and international reach.",
+        "market_position": "global carrier",
+        "ideal_customer": "multinational enterprises requiring managed WAN services",
+        "source_urls": [
+          "https://www.gtt.net"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "gtt-ip-transit",
+          "name": "IP Transit",
+          "category": "network",
+          "description": "Global IP backbone connectivity"
+        },
+        {
+          "service_id": "gtt-ethernet",
+          "name": "Ethernet",
+          "category": "network",
+          "description": "Global Ethernet private lines"
+        },
+        {
+          "service_id": "gtt-sdwan",
+          "name": "SD-WAN",
+          "category": "network",
+          "description": "Software-defined WAN services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "tierpoint",
+        "name": "TierPoint",
+        "hq_country": "United States",
+        "hq_city": "St. Louis",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.27,
+        "summary": "TierPoint operates 40+ data centers across the U.S. providing colocation, cloud, disaster recovery, and managed services. Focus on secondary and tertiary markets with flexible solutions. Offers hybrid IT infrastructure with strong regional presence and local support.",
+        "market_position": "regional provider",
+        "ideal_customer": "enterprises in secondary markets requiring colocation and managed services",
+        "source_urls": [
+          "https://www.tierpoint.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "tierpoint-st-louis",
+          "name": "St. Louis Data Center",
+          "city": "St. Louis",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "tierpoint-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Flexible colocation across U.S. markets"
+        },
+        {
+          "service_id": "tierpoint-draas",
+          "name": "DRaaS",
+          "category": "backup-dr",
+          "description": "Disaster recovery as a service"
+        },
+        {
+          "service_id": "tierpoint-managed",
+          "name": "Managed Services",
+          "category": "managed-services",
+          "description": "Infrastructure and application management"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "cologix",
+        "name": "Cologix",
+        "hq_country": "United States",
+        "hq_city": "Denver",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.23,
+        "summary": "Cologix operates 35+ carrier-neutral data centers across North America. Network-dense interconnection hubs in Columbus, Dallas, Minneapolis, Toronto, Vancouver, Montreal. Strong focus on ecosystem connectivity and cloud on-ramps. Multiple facilities with Tier III certification.",
+        "market_position": "North American interconnection provider",
+        "ideal_customer": "enterprises requiring network-dense interconnection in key North American markets",
+        "source_urls": [
+          "https://cologix.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "cologix-columbus",
+          "name": "COL3 Columbus",
+          "city": "Columbus",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": "Largest data center in Columbus"
+        },
+        {
+          "facility_id": "cologix-dallas",
+          "name": "DAL2 Dallas",
+          "city": "Dallas",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "cologix-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Network-dense colocation services"
+        },
+        {
+          "service_id": "cologix-interconnection",
+          "name": "Interconnection",
+          "category": "interconnection",
+          "description": "Cross-connects and cloud on-ramps"
+        },
+        {
+          "service_id": "cologix-access-marketplace",
+          "name": "Access Marketplace",
+          "category": "interconnection",
+          "description": "Software-defined interconnection"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "hipaavault",
+        "name": "HIPAA Vault",
+        "hq_country": "United States",
+        "hq_city": "Tampa",
+        "segment": "cloud",
+        "regions_served": ["us-east", "us-west"],
+        "risk_level_guess": 0.38,
+        "summary": "HIPAA Vault provides HIPAA-compliant cloud hosting and storage solutions specifically for healthcare organizations. Offers managed compliance, 24/7 security monitoring, and dedicated support. All services include Business Associate Agreements. Focus on simplifying healthcare IT compliance.",
+        "market_position": "healthcare specialist",
+        "ideal_customer": "healthcare providers and businesses requiring HIPAA-compliant infrastructure",
+        "source_urls": [
+          "https://www.hipaavault.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "hipaavault-cloud",
+          "name": "HIPAA Cloud Hosting",
+          "category": "cloud",
+          "description": "Compliant virtual machines with BAA"
+        },
+        {
+          "service_id": "hipaavault-storage",
+          "name": "HIPAA Storage",
+          "category": "storage",
+          "description": "Encrypted file storage and backup"
+        },
+        {
+          "service_id": "hipaavault-email",
+          "name": "HIPAA Email",
+          "category": "managed-services",
+          "description": "Encrypted email for ePHI"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": "With BAA"
+        },
+        {
+          "cert_id": "hitech",
+          "name": "HITECH",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "bytegrid",
+        "name": "ByteGrid",
+        "hq_country": "United States",
+        "hq_city": "Chicago",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-central"],
+        "risk_level_guess": 0.40,
+        "summary": "ByteGrid provides HIPAA-compliant colocation, cloud, and managed services for healthcare and financial services. Operates facilities in Chicago with focus on security and compliance. Offers comprehensive managed solutions with white-glove service. Strong healthcare industry expertise.",
+        "market_position": "compliance specialist",
+        "ideal_customer": "healthcare and financial organizations requiring managed compliant infrastructure",
+        "source_urls": [
+          "https://www.bytegrid.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "bytegrid-chicago",
+          "name": "Chicago Data Center",
+          "city": "Chicago",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": "HIPAA-compliant facility"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "bytegrid-colocation",
+          "name": "HIPAA Colocation",
+          "category": "colocation",
+          "description": "Compliant colocation with BAA"
+        },
+        {
+          "service_id": "bytegrid-managed-cloud",
+          "name": "Managed Cloud",
+          "category": "managed-services",
+          "description": "Fully managed compliant cloud infrastructure"
+        },
+        {
+          "service_id": "bytegrid-compliance",
+          "name": "Compliance Services",
+          "category": "managed-services",
+          "description": "HIPAA, HITECH, and PCI compliance management"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        },
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "crown-castle",
+        "name": "Crown Castle",
+        "hq_country": "United States",
+        "hq_city": "Houston",
+        "segment": "network",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.19,
+        "summary": "Crown Castle owns and operates 40,000 cell towers and 85,000+ route miles of fiber supporting small cells and fiber solutions. Provides dark fiber, small cell networks, and connectivity for wireless carriers. Major infrastructure provider for 5G networks. Focus on dense urban fiber deployments.",
+        "market_position": "infrastructure provider",
+        "ideal_customer": "wireless carriers and enterprises requiring metro fiber and 5G infrastructure",
+        "source_urls": [
+          "https://www.crowncastle.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "crown-castle-dark-fiber",
+          "name": "Dark Fiber",
+          "category": "network",
+          "description": "Metro dark fiber infrastructure"
+        },
+        {
+          "service_id": "crown-castle-small-cells",
+          "name": "Small Cells",
+          "category": "network",
+          "description": "Small cell network infrastructure"
+        },
+        {
+          "service_id": "crown-castle-fiber",
+          "name": "Fiber Solutions",
+          "category": "network",
+          "description": "Metro fiber connectivity"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "contabo",
+        "name": "Contabo",
+        "hq_country": "Germany",
+        "hq_city": "Munich",
+        "segment": "cloud",
+        "regions_served": ["eu-west", "us-east", "us-west", "apac"],
+        "risk_level_guess": 0.42,
+        "summary": "Contabo provides budget VPS, dedicated servers, and colocation from Germany, U.S., and Singapore. Known for extremely competitive pricing with generous resource allocations. Popular with developers and small businesses seeking affordable infrastructure. Self-service platform with basic support.",
+        "market_position": "budget provider",
+        "ideal_customer": "cost-conscious developers and small businesses",
+        "source_urls": [
+          "https://contabo.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "contabo-munich",
+          "name": "Munich Data Center",
+          "city": "Munich",
+          "region": "eu-west",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "contabo-st-louis",
+          "name": "St. Louis Data Center",
+          "city": "St. Louis",
+          "region": "us-central",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "contabo-vps",
+          "name": "VPS",
+          "category": "cloud",
+          "description": "Budget virtual private servers"
+        },
+        {
+          "service_id": "contabo-dedicated",
+          "name": "Dedicated Servers",
+          "category": "bare-metal",
+          "description": "Affordable dedicated hosting"
+        },
+        {
+          "service_id": "contabo-storage",
+          "name": "Object Storage",
+          "category": "storage",
+          "description": "S3-compatible object storage"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "aws",
+        "name": "Amazon Web Services",
+        "hq_country": "United States",
+        "hq_city": "Seattle",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.08,
+        "summary": "AWS is the world's leading cloud platform with 33% market share operating 108 availability zones across 34 regions. Offers 200+ services including EC2, S3, RDS, Lambda, and extensive AI/ML capabilities. Industry leader in innovation, security, and global reach. Powers millions of customers.",
+        "market_position": "cloud market leader",
+        "ideal_customer": "enterprises and organizations of all sizes requiring comprehensive cloud services",
+        "source_urls": [
+          "https://aws.amazon.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "aws-ec2",
+          "name": "EC2",
+          "category": "cloud",
+          "description": "Elastic compute cloud instances"
+        },
+        {
+          "service_id": "aws-s3",
+          "name": "S3",
+          "category": "storage",
+          "description": "Object storage service"
+        },
+        {
+          "service_id": "aws-rds",
+          "name": "RDS",
+          "category": "cloud",
+          "description": "Managed relational databases"
+        },
+        {
+          "service_id": "aws-lambda",
+          "name": "Lambda",
+          "category": "cloud",
+          "description": "Serverless compute"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        },
+        {
+          "cert_id": "fedramp",
+          "name": "FedRAMP",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "microsoft-azure",
+        "name": "Microsoft Azure",
+        "hq_country": "United States",
+        "hq_city": "Redmond",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.09,
+        "summary": "Microsoft Azure is the second-largest cloud platform with 24% market share operating 60+ regions globally. Comprehensive cloud services including compute, storage, AI, and hybrid solutions. Strong enterprise integration with Microsoft 365 and Active Directory. Leader in hybrid cloud and government services.",
+        "market_position": "enterprise cloud leader",
+        "ideal_customer": "enterprises with Microsoft ecosystems requiring hybrid cloud",
+        "source_urls": [
+          "https://azure.microsoft.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "azure-vms",
+          "name": "Virtual Machines",
+          "category": "cloud",
+          "description": "Cloud compute instances"
+        },
+        {
+          "service_id": "azure-storage",
+          "name": "Storage",
+          "category": "storage",
+          "description": "Blob, file, and disk storage"
+        },
+        {
+          "service_id": "azure-sql",
+          "name": "Azure SQL",
+          "category": "cloud",
+          "description": "Managed SQL databases"
+        },
+        {
+          "service_id": "azure-arc",
+          "name": "Azure Arc",
+          "category": "cloud",
+          "description": "Hybrid and multicloud management"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        },
+        {
+          "cert_id": "fedramp",
+          "name": "FedRAMP",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "google-cloud",
+        "name": "Google Cloud Platform",
+        "hq_country": "United States",
+        "hq_city": "Mountain View",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.11,
+        "summary": "Google Cloud is the third-largest cloud platform with 11% market share operating across 40+ regions. Known for data analytics, AI/ML leadership with Vertex AI, and high-performance networking. Strong in containerization with GKE and serverless with Cloud Run. Leader in sustainability.",
+        "market_position": "data and AI cloud leader",
+        "ideal_customer": "data-intensive and AI workloads requiring advanced analytics",
+        "source_urls": [
+          "https://cloud.google.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "gcp-compute",
+          "name": "Compute Engine",
+          "category": "cloud",
+          "description": "Virtual machine instances"
+        },
+        {
+          "service_id": "gcp-gke",
+          "name": "GKE",
+          "category": "cloud",
+          "description": "Managed Kubernetes service"
+        },
+        {
+          "service_id": "gcp-bigquery",
+          "name": "BigQuery",
+          "category": "cloud",
+          "description": "Serverless data warehouse"
+        },
+        {
+          "service_id": "gcp-vertex-ai",
+          "name": "Vertex AI",
+          "category": "cloud",
+          "description": "AI and ML platform"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "ibm-cloud",
+        "name": "IBM Cloud",
+        "hq_country": "United States",
+        "hq_city": "Armonk",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.21,
+        "summary": "IBM Cloud provides enterprise cloud infrastructure with strong focus on hybrid cloud, AI with Watson, and regulated industries. Operates 60+ data centers globally. Leader in bare metal, SAP workloads, and mainframe integration. Comprehensive compliance certifications for financial and healthcare sectors.",
+        "market_position": "enterprise hybrid cloud",
+        "ideal_customer": "large enterprises with legacy systems requiring hybrid cloud and compliance",
+        "source_urls": [
+          "https://www.ibm.com/cloud"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "ibm-bare-metal",
+          "name": "Bare Metal Servers",
+          "category": "bare-metal",
+          "description": "High-performance dedicated servers"
+        },
+        {
+          "service_id": "ibm-vpc",
+          "name": "Virtual Private Cloud",
+          "category": "cloud",
+          "description": "Isolated cloud infrastructure"
+        },
+        {
+          "service_id": "ibm-watson",
+          "name": "Watson AI",
+          "category": "cloud",
+          "description": "Enterprise AI services"
+        },
+        {
+          "service_id": "ibm-satellite",
+          "name": "Satellite",
+          "category": "cloud",
+          "description": "Hybrid cloud management"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "oracle-cloud",
+        "name": "Oracle Cloud Infrastructure",
+        "hq_country": "United States",
+        "hq_city": "Austin",
+        "segment": "cloud",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.19,
+        "summary": "Oracle Cloud Infrastructure (OCI) provides enterprise cloud services with strong focus on database workloads, ERP, and high-performance computing. Operates 48 cloud regions with aggressive pricing. Leader in autonomous databases and database migration. Strong compliance and security focus.",
+        "market_position": "database and enterprise cloud",
+        "ideal_customer": "Oracle workloads and database-intensive applications",
+        "source_urls": [
+          "https://www.oracle.com/cloud"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "oci-compute",
+          "name": "Compute",
+          "category": "cloud",
+          "description": "Virtual machines and bare metal"
+        },
+        {
+          "service_id": "oci-autonomous-db",
+          "name": "Autonomous Database",
+          "category": "cloud",
+          "description": "Self-managing Oracle databases"
+        },
+        {
+          "service_id": "oci-exadata",
+          "name": "Exadata Cloud",
+          "category": "cloud",
+          "description": "Managed Exadata infrastructure"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        },
+        {
+          "cert_id": "hipaa",
+          "name": "HIPAA",
+          "notes": null
+        },
+        {
+          "cert_id": "pci-dss",
+          "name": "PCI DSS",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "aligned-data-centers",
+        "name": "Aligned Data Centers",
+        "hq_country": "United States",
+        "hq_city": "Dallas",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.25,
+        "summary": "Aligned operates hyperscale data center campuses across the U.S. with focus on sustainability and efficiency. Patented Delta Cube design delivers industry-leading PUE. Serves hyperscale cloud providers and large enterprises. Known for rapid deployment and flexible capacity.",
+        "market_position": "hyperscale specialist",
+        "ideal_customer": "hyperscale operators and large enterprises requiring wholesale capacity",
+        "source_urls": [
+          "https://www.aligneddc.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "aligned-dallas",
+          "name": "Dallas Campus",
+          "city": "Dallas",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": "Multiple buildings"
+        },
+        {
+          "facility_id": "aligned-ashburn",
+          "name": "Ashburn Campus",
+          "city": "Ashburn",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "aligned-hyperscale",
+          "name": "Hyperscale Colocation",
+          "category": "colocation",
+          "description": "Large-scale wholesale data center capacity"
+        },
+        {
+          "service_id": "aligned-build-to-suit",
+          "name": "Build-to-Suit",
+          "category": "colocation",
+          "description": "Custom campus developments"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "stack-infrastructure",
+        "name": "STACK Infrastructure",
+        "hq_country": "United States",
+        "hq_city": "Denver",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central", "eu-west", "apac"],
+        "risk_level_guess": 0.24,
+        "summary": "STACK Infrastructure develops and operates hyperscale data centers across North America, Europe, and Asia-Pacific. Focus on large-scale wholesale colocation with sustainable design. Backed by IPI Partners and DigitalBridge. Rapid growth with multiple campus developments.",
+        "market_position": "hyperscale developer",
+        "ideal_customer": "hyperscale and cloud providers requiring large capacity deployments",
+        "source_urls": [
+          "https://www.stackinfra.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "stack-atlanta",
+          "name": "Atlanta Campus",
+          "city": "Atlanta",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "stack-silicon-valley",
+          "name": "Silicon Valley Campus",
+          "city": "San Jose",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "stack-hyperscale-colocation",
+          "name": "Hyperscale Colocation",
+          "category": "colocation",
+          "description": "Wholesale data center capacity"
+        },
+        {
+          "service_id": "stack-build-to-scale",
+          "name": "Build-to-Scale",
+          "category": "colocation",
+          "description": "Custom hyperscale developments"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "serverfarm",
+        "name": "ServerFarm",
+        "hq_country": "United States",
+        "hq_city": "Seattle",
+        "segment": "colocation",
+        "regions_served": ["us-west"],
+        "risk_level_guess": 0.36,
+        "summary": "ServerFarm operates sustainable data centers in California powered by 100% renewable energy. Focus on colocation and cloud services for the West Coast market. Known for green initiatives and flexible solutions. Regional provider serving enterprises and cloud companies.",
+        "market_position": "sustainable regional provider",
+        "ideal_customer": "West Coast enterprises prioritizing sustainability",
+        "source_urls": [
+          "https://www.serverfarmllc.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "serverfarm-santa-clara",
+          "name": "Santa Clara",
+          "city": "Santa Clara",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": "100% renewable energy"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "serverfarm-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Green colocation services"
+        },
+        {
+          "service_id": "serverfarm-cloud",
+          "name": "Cloud Services",
+          "category": "cloud",
+          "description": "Managed cloud infrastructure"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "dc-blox",
+        "name": "DC BLOX",
+        "hq_country": "United States",
+        "hq_city": "Birmingham",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-central"],
+        "risk_level_guess": 0.43,
+        "summary": "DC BLOX develops and operates edge data centers in secondary U.S. markets including Alabama, North Carolina, Tennessee, and Georgia. Focus on bringing hyperscale-quality infrastructure to underserved regions. Supports digital transformation in emerging markets with carrier-neutral facilities.",
+        "market_position": "secondary market specialist",
+        "ideal_customer": "enterprises and service providers in secondary U.S. markets",
+        "source_urls": [
+          "https://www.dcblox.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "dcblox-birmingham",
+          "name": "Birmingham",
+          "city": "Birmingham",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "dcblox-chattanooga",
+          "name": "Chattanooga",
+          "city": "Chattanooga",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "dcblox-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Edge colocation in secondary markets"
+        },
+        {
+          "service_id": "dcblox-connectivity",
+          "name": "Connectivity",
+          "category": "interconnection",
+          "description": "Network and cloud connectivity"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "edged-energy",
+        "name": "Edged Energy",
+        "hq_country": "United States",
+        "hq_city": "Norcross",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-central"],
+        "risk_level_guess": 0.45,
+        "summary": "Edged Energy operates edge data centers in Georgia focusing on Atlanta metro area. Provides colocation and connectivity services to regional enterprises. Known for customer service and flexible solutions. Smaller regional player with focus on local market expertise.",
+        "market_position": "regional edge provider",
+        "ideal_customer": "regional enterprises in Georgia requiring local data center presence",
+        "source_urls": [
+          "https://www.edgedenergy.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "edged-norcross",
+          "name": "Norcross Data Center",
+          "city": "Norcross",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "edged-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Regional colocation services"
+        },
+        {
+          "service_id": "edged-connectivity",
+          "name": "Connectivity",
+          "category": "network",
+          "description": "Network services"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "t5-datacenters",
+        "name": "T5 Data Centers",
+        "hq_country": "United States",
+        "hq_city": "Atlanta",
+        "segment": "colocation",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.31,
+        "summary": "T5 Data Centers operates Tier III facilities across major U.S. markets providing colocation and interconnection. Focus on enterprise and hyperscale customers with carrier-neutral infrastructure. Known for operational excellence and customer-centric approach. Growing national footprint.",
+        "market_position": "mid-tier provider",
+        "ideal_customer": "enterprises requiring reliable Tier III colocation",
+        "source_urls": [
+          "https://www.t5datacenters.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "t5-atlanta",
+          "name": "Atlanta Data Center",
+          "city": "Atlanta",
+          "region": "us-east",
+          "tier_rating": "Tier III",
+          "notes": null
+        },
+        {
+          "facility_id": "t5-portland",
+          "name": "Portland Data Center",
+          "city": "Portland",
+          "region": "us-west",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "t5-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Enterprise colocation services"
+        },
+        {
+          "service_id": "t5-interconnection",
+          "name": "Interconnection",
+          "category": "interconnection",
+          "description": "Cross-connect services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "centerstack",
+        "name": "CenterStack",
+        "hq_country": "United States",
+        "hq_city": "Denver",
+        "segment": "colocation",
+        "regions_served": ["us-central", "us-west"],
+        "risk_level_guess": 0.39,
+        "summary": "CenterStack operates data centers in Colorado providing colocation, cloud, and connectivity services. Focus on Denver market with Tier III facilities. Serves regional enterprises with flexible infrastructure solutions. Known for local expertise and personalized service.",
+        "market_position": "regional provider",
+        "ideal_customer": "Colorado-based enterprises requiring local colocation",
+        "source_urls": [
+          "https://www.centerstack.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "centerstack-denver",
+          "name": "Denver Data Center",
+          "city": "Denver",
+          "region": "us-central",
+          "tier_rating": "Tier III",
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "centerstack-colocation",
+          "name": "Colocation",
+          "category": "colocation",
+          "description": "Regional colocation services"
+        },
+        {
+          "service_id": "centerstack-cloud",
+          "name": "Cloud Services",
+          "category": "cloud",
+          "description": "Private and hybrid cloud"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "starry-internet",
+        "name": "Starry",
+        "hq_country": "United States",
+        "hq_city": "Boston",
+        "segment": "network",
+        "regions_served": ["us-east", "us-west"],
+        "risk_level_guess": 0.48,
+        "summary": "Starry provides fixed wireless broadband using millimeter wave technology in select U.S. cities. Focus on residential and MDU (multi-dwelling unit) connectivity. Alternative to traditional cable and fiber. Known for transparent pricing and no data caps.",
+        "market_position": "fixed wireless ISP",
+        "ideal_customer": "urban residential and building owners seeking alternative broadband",
+        "source_urls": [
+          "https://starry.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "starry-internet",
+          "name": "Starry Internet",
+          "category": "network",
+          "description": "Fixed wireless broadband"
+        }
+      ],
+      "certifications": []
+    },
+    {
+      "vendor": {
+        "vendor_id": "axcient",
+        "name": "Axcient",
+        "hq_country": "United States",
+        "hq_city": "Austin",
+        "segment": "backup-dr",
+        "regions_served": ["us-east", "us-west", "us-central"],
+        "risk_level_guess": 0.29,
+        "summary": "Axcient provides business continuity and disaster recovery solutions for MSPs and enterprises. x360 platform offers backup, recovery, and disaster recovery orchestration. Focus on ransomware protection with immutable backups. Strong MSP channel with white-label capabilities.",
+        "market_position": "MSP BCDR provider",
+        "ideal_customer": "MSPs and SMBs requiring comprehensive business continuity",
+        "source_urls": [
+          "https://axcient.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "axcient-x360",
+          "name": "x360 Platform",
+          "category": "backup-dr",
+          "description": "Unified backup and disaster recovery"
+        },
+        {
+          "service_id": "axcient-direct-to-cloud",
+          "name": "Direct-to-Cloud",
+          "category": "backup-dr",
+          "description": "Cloud-first backup without appliances"
+        },
+        {
+          "service_id": "axcient-runbook",
+          "name": "Runbook Automation",
+          "category": "backup-dr",
+          "description": "Automated DR orchestration"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2 Type II",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "levelblue",
+        "name": "LevelBlue",
+        "hq_country": "United States",
+        "hq_city": "Dallas",
+        "segment": "security",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.22,
+        "summary": "LevelBlue (formerly AT&T Cybersecurity) provides managed security services including SIEM, MDR, and consulting. USM Anywhere platform delivers unified threat detection. Strong focus on OT/IoT security and threat intelligence. Backed by AT&T infrastructure with global SOC operations.",
+        "market_position": "enterprise MSSP",
+        "ideal_customer": "enterprises requiring managed security with OT/IoT expertise",
+        "source_urls": [
+          "https://levelblue.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "levelblue-mdr",
+          "name": "Managed Detection & Response",
+          "category": "security",
+          "description": "24/7 threat monitoring and response"
+        },
+        {
+          "service_id": "levelblue-usm",
+          "name": "USM Anywhere",
+          "category": "security",
+          "description": "Unified security management platform"
+        },
+        {
+          "service_id": "levelblue-consulting",
+          "name": "Security Consulting",
+          "category": "security",
+          "description": "Advisory and assessment services"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "sophos",
+        "name": "Sophos",
+        "hq_country": "United Kingdom",
+        "hq_city": "Abingdon",
+        "segment": "security",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.18,
+        "summary": "Sophos provides cybersecurity solutions including MDR, EDR, XDR, and network security. Sophos Managed Detection and Response offers 24/7 threat hunting and response. Strong focus on SMB market with comprehensive protection suite. Part of Thoma Bravo portfolio.",
+        "market_position": "SMB security leader",
+        "ideal_customer": "SMBs and mid-market requiring comprehensive security",
+        "source_urls": [
+          "https://www.sophos.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "sophos-mdr",
+          "name": "Sophos MDR",
+          "category": "security",
+          "description": "24/7 managed detection and response"
+        },
+        {
+          "service_id": "sophos-xdr",
+          "name": "Sophos XDR",
+          "category": "security",
+          "description": "Extended detection and response"
+        },
+        {
+          "service_id": "sophos-firewall",
+          "name": "Sophos Firewall",
+          "category": "security",
+          "description": "Next-gen firewall appliances"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        },
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "upcloud",
+        "name": "UpCloud",
+        "hq_country": "Finland",
+        "hq_city": "Helsinki",
+        "segment": "cloud",
+        "regions_served": ["eu-west", "us-east", "us-west", "apac"],
+        "risk_level_guess": 0.33,
+        "summary": "UpCloud provides high-performance cloud servers with MaxIOPS storage technology across 14 global locations. European cloud provider with GDPR compliance. Known for excellent performance-to-price ratio and developer-friendly platform. Strong presence in Nordic and European markets.",
+        "market_position": "European performance cloud",
+        "ideal_customer": "European developers and businesses requiring GDPR-compliant infrastructure",
+        "source_urls": [
+          "https://upcloud.com"
+        ]
+      },
+      "facilities": [
+        {
+          "facility_id": "upcloud-helsinki",
+          "name": "Helsinki",
+          "city": "Helsinki",
+          "region": "eu-west",
+          "tier_rating": null,
+          "notes": null
+        },
+        {
+          "facility_id": "upcloud-frankfurt",
+          "name": "Frankfurt",
+          "city": "Frankfurt",
+          "region": "eu-west",
+          "tier_rating": null,
+          "notes": null
+        }
+      ],
+      "services": [
+        {
+          "service_id": "upcloud-servers",
+          "name": "Cloud Servers",
+          "category": "cloud",
+          "description": "High-performance virtual machines"
+        },
+        {
+          "service_id": "upcloud-kubernetes",
+          "name": "Managed Kubernetes",
+          "category": "cloud",
+          "description": "Kubernetes cluster management"
+        },
+        {
+          "service_id": "upcloud-storage",
+          "name": "MaxIOPS Storage",
+          "category": "storage",
+          "description": "High-performance block storage"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "iso27001",
+          "name": "ISO 27001",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "vendor": {
+        "vendor_id": "zenlayer",
+        "name": "Zenlayer",
+        "hq_country": "United States",
+        "hq_city": "Los Angeles",
+        "segment": "network",
+        "regions_served": ["global"],
+        "risk_level_guess": 0.34,
+        "summary": "Zenlayer provides edge cloud platform with bare metal, virtual machines, and network services across 290+ PoPs globally. Strong presence in emerging markets including Southeast Asia, Latin America, and Africa. Focus on low-latency edge computing and global connectivity.",
+        "market_position": "emerging markets edge provider",
+        "ideal_customer": "global businesses requiring edge presence in emerging markets",
+        "source_urls": [
+          "https://www.zenlayer.com"
+        ]
+      },
+      "facilities": [],
+      "services": [
+        {
+          "service_id": "zenlayer-bare-metal",
+          "name": "Bare Metal",
+          "category": "bare-metal",
+          "description": "Global bare metal servers"
+        },
+        {
+          "service_id": "zenlayer-edge-cloud",
+          "name": "Edge Cloud",
+          "category": "cloud",
+          "description": "Edge computing instances"
+        },
+        {
+          "service_id": "zenlayer-sd-wan",
+          "name": "Global Accelerator",
+          "category": "network",
+          "description": "SD-WAN and network optimization"
+        }
+      ],
+      "certifications": [
+        {
+          "cert_id": "soc2",
+          "name": "SOC 2",
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

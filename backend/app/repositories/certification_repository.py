@@ -29,6 +29,33 @@ class CertificationRepository:
             notes=cert.notes,
         )
 
+    async def upsert_certification_for_vendor(
+        self, vendor_id: str, cert: CertificationBase
+    ) -> None:
+        """
+        MERGE Certification node and create HOLDS relationship to Vendor.
+
+        Creates:
+        - (c:Certification) node with cert properties
+        - (v:Vendor)-[:HOLDS]->(c:Certification) relationship
+
+        Uses MERGE for idempotent upserts.
+        """
+        cypher = """
+        MATCH (v:Vendor {vendor_id: $vendor_id})
+        MERGE (c:Certification {cert_id: $cert_id})
+        SET c.name = $name,
+            c.notes = $notes
+        MERGE (v)-[:HOLDS]->(c)
+        """
+        await self._session.run(
+            cypher,
+            vendor_id=vendor_id,
+            cert_id=cert.cert_id,
+            name=cert.name,
+            notes=cert.notes,
+        )
+
     async def get_certification_by_id(self, cert_id: str) -> CertificationBase | None:
         """
         MATCH Certification by cert_id, return CertificationBase or None if not found.
