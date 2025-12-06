@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     # When not set, the system uses rule-based keyword extraction (MockNLParser)
     llm_provider: str | None = None
     openai_api_key: str | None = None
+    openai_model: str = "gpt-4.1"  # Options: gpt-4.1, gpt-4o, gpt-4o-mini, gpt-4-turbo
     anthropic_api_key: str | None = None
 
     class Config:
