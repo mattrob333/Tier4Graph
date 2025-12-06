@@ -51,11 +51,12 @@ async def ingest_services(
     """
     Ingest services for a vendor.
 
+    Creates Service nodes and OFFERS relationships to the Vendor.
     Returns count of inserted services.
     """
     repo = ServiceRepository(session)
     for service in services:
-        await repo.upsert_service(service)
+        await repo.upsert_service(service, vendor_id=vendor_id)
     return {"inserted": len(services)}
 
 
@@ -68,9 +69,10 @@ async def ingest_certifications(
     """
     Ingest certifications for a vendor.
 
+    Creates Certification nodes and HOLDS relationships to the Vendor.
     Returns count of inserted certifications.
     """
     repo = CertificationRepository(session)
     for cert in certifications:
-        await repo.upsert_certification(cert)
+        await repo.upsert_certification_for_vendor(vendor_id, cert)
     return {"inserted": len(certifications)}

@@ -1,0 +1,556 @@
+[
+  {
+    "vendor": {
+      "vendor_id": "equinix",
+      "name": "Equinix",
+      "summary": "Global digital infrastructure company operating 240+ data centers across 70+ metros worldwide. Leader in interconnection and colocation services.",
+      "hq_country": "USA",
+      "hq_city": "Redwood City",
+      "region": "us-west",
+      "website": "https://www.equinix.com",
+      "primary_segments": ["colocation", "interconnection", "edge"],
+      "typical_customer_profile": "Enterprise and hyperscale customers requiring global reach and dense interconnection",
+      "risk_score_guess": 0.15,
+      "financial_stability_guess": "excellent",
+      "culture_text": "Customer-first, innovation-driven, sustainability-focused with strong ESG commitments"
+    },
+    "facilities": [
+      {
+        "facility_id": "equinix-dc1",
+        "vendor_id": "equinix",
+        "geo": "us-east",
+        "tier": "Tier IV",
+        "cooling": "N+1 chilled water",
+        "power_density": 20.0,
+        "address": "Ashburn, VA"
+      },
+      {
+        "facility_id": "equinix-sv5",
+        "vendor_id": "equinix",
+        "geo": "us-west",
+        "tier": "Tier IV",
+        "cooling": "N+1 chilled water",
+        "power_density": 18.0,
+        "address": "San Jose, CA"
+      },
+      {
+        "facility_id": "equinix-ld8",
+        "vendor_id": "equinix",
+        "geo": "eu-west",
+        "tier": "Tier III",
+        "cooling": "Free cooling + chilled water",
+        "power_density": 15.0,
+        "address": "London, UK"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "equinix-colo",
+        "category": "colocation",
+        "description": "Enterprise colocation with flexible power and space options from single cabinets to private cages"
+      },
+      {
+        "service_id": "equinix-fabric",
+        "category": "interconnection",
+        "description": "Equinix Fabric software-defined interconnection platform for direct cloud and partner connectivity"
+      },
+      {
+        "service_id": "equinix-metal",
+        "category": "bare-metal",
+        "description": "On-demand bare metal infrastructure with automated provisioning"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "equinix-soc2", "name": "SOC 2 Type II", "notes": "Annual audit across all facilities"},
+      {"cert_id": "equinix-iso27001", "name": "ISO 27001", "notes": "Information security management"},
+      {"cert_id": "equinix-pci", "name": "PCI DSS", "notes": "Payment card industry compliance"},
+      {"cert_id": "equinix-hipaa", "name": "HIPAA", "notes": "Healthcare data ready"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "digitalrealty",
+      "name": "Digital Realty",
+      "summary": "Global data center REIT with 300+ facilities across 50+ metros. Strong presence in North America and Europe.",
+      "hq_country": "USA",
+      "hq_city": "Austin",
+      "region": "us-east",
+      "website": "https://www.digitalrealty.com",
+      "primary_segments": ["colocation", "wholesale", "interconnection"],
+      "typical_customer_profile": "Hyperscalers, large enterprises, and financial services requiring scale and reliability",
+      "risk_score_guess": 0.18,
+      "financial_stability_guess": "excellent",
+      "culture_text": "Scale-focused, customer partnership model, strong financial backing as public REIT"
+    },
+    "facilities": [
+      {
+        "facility_id": "dlr-iad1",
+        "vendor_id": "digitalrealty",
+        "geo": "us-east",
+        "tier": "Tier III",
+        "cooling": "Chilled water with economizer",
+        "power_density": 15.0,
+        "address": "Ashburn, VA"
+      },
+      {
+        "facility_id": "dlr-dfw1",
+        "vendor_id": "digitalrealty",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "N+1 air cooled",
+        "power_density": 12.0,
+        "address": "Dallas, TX"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "dlr-colo",
+        "category": "colocation",
+        "description": "Retail and wholesale colocation with flexible deployment options"
+      },
+      {
+        "service_id": "dlr-serviceexchange",
+        "category": "interconnection",
+        "description": "ServiceFabric interconnection platform for cloud and partner connectivity"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "dlr-soc2", "name": "SOC 2 Type II", "notes": "Annual compliance audit"},
+      {"cert_id": "dlr-iso27001", "name": "ISO 27001", "notes": "Information security certified"},
+      {"cert_id": "dlr-pci", "name": "PCI DSS", "notes": "Payment card compliant"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "cyrusone",
+      "name": "CyrusOne",
+      "summary": "Enterprise-focused data center provider with 50+ facilities. Strong in hybrid cloud and enterprise deployments.",
+      "hq_country": "USA",
+      "hq_city": "Dallas",
+      "region": "us-central",
+      "website": "https://www.cyrusone.com",
+      "primary_segments": ["colocation", "hybrid-cloud", "enterprise"],
+      "typical_customer_profile": "Fortune 1000 enterprises requiring hybrid cloud integration and compliance",
+      "risk_score_guess": 0.20,
+      "financial_stability_guess": "good",
+      "culture_text": "Enterprise-centric, compliance-focused, strong customer service orientation"
+    },
+    "facilities": [
+      {
+        "facility_id": "cyrus-phx1",
+        "vendor_id": "cyrusone",
+        "geo": "us-west",
+        "tier": "Tier III",
+        "cooling": "Evaporative + mechanical",
+        "power_density": 14.0,
+        "address": "Phoenix, AZ"
+      },
+      {
+        "facility_id": "cyrus-hou1",
+        "vendor_id": "cyrusone",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "N+1 chilled water",
+        "power_density": 12.0,
+        "address": "Houston, TX"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "cyrus-colo",
+        "category": "colocation",
+        "description": "Enterprise colocation with dedicated compliance support"
+      },
+      {
+        "service_id": "cyrus-hybrid",
+        "category": "hybrid-cloud",
+        "description": "Hybrid cloud connectivity with major cloud providers"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "cyrus-soc2", "name": "SOC 2 Type II", "notes": "Enterprise compliance audit"},
+      {"cert_id": "cyrus-iso27001", "name": "ISO 27001", "notes": "Security management certified"},
+      {"cert_id": "cyrus-hipaa", "name": "HIPAA", "notes": "Healthcare ready facilities"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "coresite",
+      "name": "CoreSite",
+      "summary": "Interconnection-focused data center provider with dense network ecosystems in major US metros.",
+      "hq_country": "USA",
+      "hq_city": "Denver",
+      "region": "us-west",
+      "website": "https://www.coresite.com",
+      "primary_segments": ["colocation", "interconnection", "cloud-onramp"],
+      "typical_customer_profile": "Network-intensive enterprises, cloud providers, and content delivery networks",
+      "risk_score_guess": 0.22,
+      "financial_stability_guess": "good",
+      "culture_text": "Network-centric, dense ecosystem focus, strong community building"
+    },
+    "facilities": [
+      {
+        "facility_id": "core-sv1",
+        "vendor_id": "coresite",
+        "geo": "us-west",
+        "tier": "Tier III",
+        "cooling": "Chilled water",
+        "power_density": 16.0,
+        "address": "Santa Clara, CA"
+      },
+      {
+        "facility_id": "core-ny2",
+        "vendor_id": "coresite",
+        "geo": "us-east",
+        "tier": "Tier III",
+        "cooling": "N+1 chilled water",
+        "power_density": 14.0,
+        "address": "Secaucus, NJ"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "core-colo",
+        "category": "colocation",
+        "description": "High-density colocation with robust interconnection options"
+      },
+      {
+        "service_id": "core-ocx",
+        "category": "interconnection",
+        "description": "Open Cloud Exchange for direct cloud provider connectivity"
+      },
+      {
+        "service_id": "core-blended",
+        "category": "network",
+        "description": "Blended IP transit and bandwidth services"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "core-soc2", "name": "SOC 2 Type II", "notes": "Annual audit"},
+      {"cert_id": "core-pci", "name": "PCI DSS", "notes": "Payment processing ready"},
+      {"cert_id": "core-iso27001", "name": "ISO 27001", "notes": "Security management"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "rackspace",
+      "name": "Rackspace Technology",
+      "summary": "Managed cloud and hosting provider offering multi-cloud expertise across AWS, Azure, and GCP.",
+      "hq_country": "USA",
+      "hq_city": "San Antonio",
+      "region": "us-central",
+      "website": "https://www.rackspace.com",
+      "primary_segments": ["managed-cloud", "hosting", "professional-services"],
+      "typical_customer_profile": "Mid-market to enterprise customers needing managed cloud operations and migration support",
+      "risk_score_guess": 0.35,
+      "financial_stability_guess": "fair",
+      "culture_text": "Fanatical support culture, multi-cloud expertise, transformation partner"
+    },
+    "facilities": [
+      {
+        "facility_id": "rack-dfw1",
+        "vendor_id": "rackspace",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "N+1 CRAC units",
+        "power_density": 10.0,
+        "address": "Dallas, TX"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "rack-managed-aws",
+        "category": "managed-cloud",
+        "description": "Managed AWS services with 24/7 support and optimization"
+      },
+      {
+        "service_id": "rack-managed-azure",
+        "category": "managed-cloud",
+        "description": "Managed Azure services with migration and operations support"
+      },
+      {
+        "service_id": "rack-hosting",
+        "category": "hosting",
+        "description": "Dedicated hosting with managed infrastructure"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "rack-soc2", "name": "SOC 2 Type II", "notes": "Managed services compliance"},
+      {"cert_id": "rack-pci", "name": "PCI DSS", "notes": "E-commerce ready"},
+      {"cert_id": "rack-hipaa", "name": "HIPAA", "notes": "Healthcare workload support"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "zayo",
+      "name": "Zayo Group",
+      "summary": "Network-centric infrastructure provider with extensive fiber backbone and colocation in network-dense locations.",
+      "hq_country": "USA",
+      "hq_city": "Boulder",
+      "region": "us-central",
+      "website": "https://www.zayo.com",
+      "primary_segments": ["network", "colocation", "wavelengths"],
+      "typical_customer_profile": "Carriers, enterprises, and content providers requiring network connectivity and low-latency colocation",
+      "risk_score_guess": 0.38,
+      "financial_stability_guess": "fair",
+      "culture_text": "Network-first mentality, carrier-grade reliability, infrastructure-focused"
+    },
+    "facilities": [
+      {
+        "facility_id": "zayo-den1",
+        "vendor_id": "zayo",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "Air cooled",
+        "power_density": 8.0,
+        "address": "Denver, CO"
+      },
+      {
+        "facility_id": "zayo-chi1",
+        "vendor_id": "zayo",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "Chilled water",
+        "power_density": 10.0,
+        "address": "Chicago, IL"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "zayo-darkfiber",
+        "category": "network",
+        "description": "Dark fiber leasing for dedicated connectivity"
+      },
+      {
+        "service_id": "zayo-wavelength",
+        "category": "network",
+        "description": "Wavelength services for high-bandwidth applications"
+      },
+      {
+        "service_id": "zayo-colo",
+        "category": "colocation",
+        "description": "Network-centric colocation at fiber hubs"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "zayo-soc2", "name": "SOC 2 Type II", "notes": "Network operations audit"},
+      {"cert_id": "zayo-pci", "name": "PCI DSS", "notes": "Financial network ready"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "flexential",
+      "name": "Flexential",
+      "summary": "Regional data center provider focused on mid-market enterprises with compliant, flexible infrastructure.",
+      "hq_country": "USA",
+      "hq_city": "Charlotte",
+      "region": "us-east",
+      "website": "https://www.flexential.com",
+      "primary_segments": ["colocation", "cloud", "compliance"],
+      "typical_customer_profile": "Mid-market enterprises requiring compliance and regional presence",
+      "risk_score_guess": 0.40,
+      "financial_stability_guess": "fair",
+      "culture_text": "Customer partnership, compliance expertise, regional market focus"
+    },
+    "facilities": [
+      {
+        "facility_id": "flex-atl1",
+        "vendor_id": "flexential",
+        "geo": "us-east",
+        "tier": "Tier III",
+        "cooling": "N+1 chilled water",
+        "power_density": 10.0,
+        "address": "Atlanta, GA"
+      },
+      {
+        "facility_id": "flex-pdx1",
+        "vendor_id": "flexential",
+        "geo": "us-west",
+        "tier": "Tier III",
+        "cooling": "Free cooling + mechanical",
+        "power_density": 12.0,
+        "address": "Portland, OR"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "flex-colo",
+        "category": "colocation",
+        "description": "Compliant colocation with flexible contracts"
+      },
+      {
+        "service_id": "flex-cloud",
+        "category": "cloud",
+        "description": "Private and hybrid cloud solutions"
+      },
+      {
+        "service_id": "flex-dr",
+        "category": "disaster-recovery",
+        "description": "Disaster recovery and business continuity services"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "flex-soc2", "name": "SOC 2 Type II", "notes": "Annual compliance verification"},
+      {"cert_id": "flex-hipaa", "name": "HIPAA", "notes": "Healthcare compliant"},
+      {"cert_id": "flex-pci", "name": "PCI DSS", "notes": "Payment card ready"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "tierpoint",
+      "name": "TierPoint",
+      "summary": "Regional US data center provider specializing in disaster recovery and managed IT services.",
+      "hq_country": "USA",
+      "hq_city": "St. Louis",
+      "region": "us-central",
+      "website": "https://www.tierpoint.com",
+      "primary_segments": ["colocation", "disaster-recovery", "managed-services"],
+      "typical_customer_profile": "Regional enterprises and government agencies requiring DR capabilities and managed support",
+      "risk_score_guess": 0.42,
+      "financial_stability_guess": "fair",
+      "culture_text": "Regional expertise, DR specialization, hands-on managed services"
+    },
+    "facilities": [
+      {
+        "facility_id": "tier-stl1",
+        "vendor_id": "tierpoint",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "Chilled water",
+        "power_density": 8.0,
+        "address": "St. Louis, MO"
+      },
+      {
+        "facility_id": "tier-tul1",
+        "vendor_id": "tierpoint",
+        "geo": "us-central",
+        "tier": "Tier III",
+        "cooling": "N+1 air cooled",
+        "power_density": 6.0,
+        "address": "Tulsa, OK"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "tier-colo",
+        "category": "colocation",
+        "description": "Regional colocation with local support"
+      },
+      {
+        "service_id": "tier-draas",
+        "category": "disaster-recovery",
+        "description": "Disaster Recovery as a Service with automated failover"
+      },
+      {
+        "service_id": "tier-managed",
+        "category": "managed-services",
+        "description": "Fully managed IT infrastructure services"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "tier-soc2", "name": "SOC 2 Type II", "notes": "Annual audit"},
+      {"cert_id": "tier-hipaa", "name": "HIPAA", "notes": "Healthcare compliant facilities"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "healthcaredc",
+      "name": "HealthcareDC",
+      "summary": "Specialized healthcare-focused data center provider with HIPAA-first design and healthcare IT expertise.",
+      "hq_country": "USA",
+      "hq_city": "Nashville",
+      "region": "us-east",
+      "website": "https://www.healthcaredc.example.com",
+      "primary_segments": ["healthcare", "colocation", "compliance"],
+      "typical_customer_profile": "Healthcare providers, payers, and health tech companies requiring strict HIPAA compliance",
+      "risk_score_guess": 0.25,
+      "financial_stability_guess": "good",
+      "culture_text": "Healthcare-first mentality, compliance obsessed, patient data protection as core mission"
+    },
+    "facilities": [
+      {
+        "facility_id": "hdc-nash1",
+        "vendor_id": "healthcaredc",
+        "geo": "us-east",
+        "tier": "Tier III",
+        "cooling": "N+1 precision cooling",
+        "power_density": 10.0,
+        "address": "Nashville, TN"
+      },
+      {
+        "facility_id": "hdc-bos1",
+        "vendor_id": "healthcaredc",
+        "geo": "us-east",
+        "tier": "Tier III",
+        "cooling": "Chilled water with redundancy",
+        "power_density": 12.0,
+        "address": "Boston, MA"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "hdc-colo",
+        "category": "colocation",
+        "description": "HIPAA-compliant colocation with BAA included"
+      },
+      {
+        "service_id": "hdc-ehr-hosting",
+        "category": "healthcare",
+        "description": "EHR and healthcare application hosting"
+      },
+      {
+        "service_id": "hdc-backup",
+        "category": "backup",
+        "description": "HIPAA-compliant backup and archival services"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "hdc-hipaa", "name": "HIPAA", "notes": "Core certification, annual BAA review"},
+      {"cert_id": "hdc-hitrust", "name": "HITRUST CSF", "notes": "Healthcare security framework certified"},
+      {"cert_id": "hdc-soc2", "name": "SOC 2 Type II", "notes": "Healthcare-focused audit"},
+      {"cert_id": "hdc-iso27001", "name": "ISO 27001", "notes": "Information security management"}
+    ]
+  },
+  {
+    "vendor": {
+      "vendor_id": "budgetcolo",
+      "name": "BudgetColo",
+      "summary": "Low-cost regional colocation provider offering basic services at competitive prices. Limited certifications and support.",
+      "hq_country": "USA",
+      "hq_city": "Phoenix",
+      "region": "us-west",
+      "website": "https://www.budgetcolo.example.com",
+      "primary_segments": ["colocation", "budget"],
+      "typical_customer_profile": "Startups, small businesses, and cost-sensitive projects with limited compliance requirements",
+      "risk_score_guess": 0.72,
+      "financial_stability_guess": "poor",
+      "culture_text": "Cost-first approach, self-service model, minimal hand-holding"
+    },
+    "facilities": [
+      {
+        "facility_id": "budget-phx1",
+        "vendor_id": "budgetcolo",
+        "geo": "us-west",
+        "tier": "Tier II",
+        "cooling": "Basic CRAC",
+        "power_density": 5.0,
+        "address": "Phoenix, AZ"
+      }
+    ],
+    "services": [
+      {
+        "service_id": "budget-colo",
+        "category": "colocation",
+        "description": "Basic colocation with shared power and cooling"
+      },
+      {
+        "service_id": "budget-bandwidth",
+        "category": "network",
+        "description": "Metered bandwidth with burstable options"
+      }
+    ],
+    "certifications": [
+      {"cert_id": "budget-soc2", "name": "SOC 2 Type I", "notes": "Basic point-in-time audit only"}
+    ]
+  }
+]

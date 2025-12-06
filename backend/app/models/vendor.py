@@ -11,6 +11,7 @@ class VendorBase(BaseModel):
     summary: str | None = None
     hq_country: str | None = None
     hq_city: str | None = None
+    region: str | None = None  # e.g., "us-east", "us-west", "eu-west", "apac"
     website: str | None = None
     primary_segments: list[str] = []
     typical_customer_profile: str | None = None

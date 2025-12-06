@@ -1,4 +1,4 @@
-__pycache__/
+﻿__pycache__/
 .pytest_cache/
 .venv/
 venv/
@@ -11,3 +11,5 @@ dist/
 build/
 *.log
 .env
+.next/
+nul
