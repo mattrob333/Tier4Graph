@@ -1,30 +1,4 @@
-# Neo4j + FastAPI + OpenAI Boilerplate
-
-> **Also known as:** Cognitive Procurement Engine (CPE)
-
-A production-ready boilerplate for building AI-powered graph database applications. Features natural language query parsing with OpenAI GPT, Neo4j graph database for relationship-based data, and a Next.js frontend.
-
-## 🚀 Use as a Boilerplate
-
-```bash
-# Clone for your own project
-git clone https://github.com/mattrob333/Tier4Graph.git my-new-project
-cd my-new-project
-
-# See customization guide
-cat docs/BOILERPLATE_CUSTOMIZATION.md
-```
-
-**See [`docs/BOILERPLATE_CUSTOMIZATION.md`](docs/BOILERPLATE_CUSTOMIZATION.md)** for step-by-step instructions on:
-- 🤖 Swapping AI models (GPT-4.1, GPT-4o, Claude)
-- 📝 Customizing the NL parsing prompt
-- 📊 Modifying the Neo4j schema
-- 🔍 Writing custom Cypher queries
-- 🎨 Adapting the frontend
-
----
-
-## About This Project
+# Cognitive Procurement Engine (CPE)
 
 An AI-native IT procurement decision platform built on a Neo4j graph database with a FastAPI backend. CPE models vendors, facilities, services, certifications, clients, and projects to enable intelligent vendor matching and procurement recommendations.
 

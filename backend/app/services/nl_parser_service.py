@@ -286,15 +286,13 @@ RULES:
 - "lowest risk first" → sort_by: "risk_asc"
 - Return ONLY valid JSON"""
 
-    def __init__(self, api_key: str, model: str = "gpt-4.1"):
+    def __init__(self, api_key: str):
         """Initialize the OpenAI parser.
 
         Args:
             api_key: OpenAI API key for authentication.
-            model: OpenAI model to use (default: gpt-4.1 for best instruction following).
         """
         self.client = AsyncOpenAI(api_key=api_key)
-        self.model = model
         self._fallback = MockNLParser()
 
     async def parse(self, query: str) -> MatchingRequest:
@@ -307,11 +305,11 @@ RULES:
             MatchingRequest with extracted criteria.
             Falls back to MockNLParser on any error.
         """
-        logger.debug(f"OpenAINLParser parsing query with {self.model}: {query[:100]}...")
+        logger.debug(f"OpenAINLParser parsing query: {query[:100]}...")
 
         try:
             response = await self.client.chat.completions.create(
-                model=self.model,  # Configurable model (default: gpt-4.1)
+                model="gpt-4o",  # Upgraded from gpt-4o-mini for better extraction
                 messages=[
                     {"role": "system", "content": self.SYSTEM_PROMPT},
                     {"role": "user", "content": f"Parse this query:\n\n{query}"},
@@ -358,7 +356,7 @@ def get_nl_parser(settings: Settings | None = None) -> NLParser:
     """Factory function to get the appropriate NL parser.
 
     Selects parser based on settings.llm_provider:
-    - "openai" + api_key: Uses OpenAINLParser with configured model
+    - "openai" + api_key: Uses OpenAINLParser (gpt-4o-mini)
     - Otherwise: Uses MockNLParser (keyword extraction)
 
     Args:
@@ -371,9 +369,8 @@ def get_nl_parser(settings: Settings | None = None) -> NLParser:
         logger.debug(f"get_nl_parser called with llm_provider={settings.llm_provider}")
 
         if settings.llm_provider == "openai" and settings.openai_api_key:
-            model = getattr(settings, 'openai_model', 'gpt-4.1')
-            logger.info(f"Using OpenAINLParser with model={model}")
-            return OpenAINLParser(api_key=settings.openai_api_key, model=model)
+            logger.info("Using OpenAINLParser")
+            return OpenAINLParser(api_key=settings.openai_api_key)
 
     logger.info("Using MockNLParser (no LLM provider configured)")
     return MockNLParser()
