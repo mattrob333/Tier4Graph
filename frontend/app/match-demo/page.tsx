@@ -202,7 +202,7 @@ function VendorCard({ vendor }: { vendor: MatchVendor }) {
             {vendor.region && (
               <span className="bg-slate-100 px-2 py-0.5 rounded">{vendor.region}</span>
             )}
-            {vendor.risk_score !== undefined && (
+            {vendor.risk_score != null && (
               <span className={`px-2 py-0.5 rounded ${vendor.risk_score <= 0.25 ? 'bg-green-100 text-green-700' : vendor.risk_score <= 0.5 ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
                 Risk: {vendor.risk_score.toFixed(2)}
               </span>
