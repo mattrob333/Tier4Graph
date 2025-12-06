@@ -3,7 +3,10 @@
 import React, { useState } from "react";
 import { MatchResponse, MatchVendor } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000";
+// Use Railway backend in production, localhost for local dev
+const API_URL = typeof window !== 'undefined' && window.location.hostname !== 'localhost' 
+  ? "https://tier4graph-production.up.railway.app"
+  : "http://127.0.0.1:8000";
 
 const PRESETS = [
   {
